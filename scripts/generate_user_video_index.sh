@@ -1,1 +1,1 @@
-java -classpath target/generators-1.0-SNAPSHOT-jar-with-dependencies.jar com.datastax.video.GenerateUserVideoIndex $1 $2
+java -classpath ../target/cassandra-labs-1.0-SNAPSHOT-jar-with-dependencies.jar com.hi.cassandra.video.GenerateUserVideoIndex $1 $2
