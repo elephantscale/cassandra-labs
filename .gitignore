@@ -1,2 +1,6 @@
 target/
 generated/
+*.jar
+.DS_Store
+*.zip
+*.log
