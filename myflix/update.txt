@@ -1,0 +1,46 @@
+Lab : Creating MyFlix application
+
+== STEP 1)  Enter cqlsh
+    $   cqlsh
+
+
+== STEP 2)  If you haven't done so, alter table and add a studio column
+Alter the features table to add 'studio' column (text)
+    cqlsh>    ALTER TABLE features  ADD studio text;
+
+
+== STEP 3) query the table
+    cqlsh>  select * from features;
+Q: What is the value of studio column?
+
+
+== STEP 4)  Update some rows
+    cqlsh>
+
+        UPDATE features  SET studio = 'AMC'  where code = 'madmen';
+        UPDATE features  SET studio = 'HBO'  where code = 'sopr';
+        UPDATE features  SET studio = 'Lucas Films'  where code = 'star1';
+
+verify data
+    cqlsh >    select * from features;
+
+
+== STEP 5)  Update via INSERT
+    cqlsh>
+        INSERT INTO features (code,  studio)
+            VALUES ('ryan', 'Columbia' );
+
+        INSERT INTO features (code, studio)
+            VALUES ('loui1', 'Louis CK');
+
+verify data
+    cqlsh >    select * from features;
+
+
+== STEP 6)   Update a 'new' row
+    csqlsh>
+            UPDATE features SET name = 'The Simpsons',  studio = 'FOX'
+            WHERE code = 'simp';
+
+verify data
+    cqlsh >    select * from features;

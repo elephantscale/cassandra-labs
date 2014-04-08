@@ -1,39 +1,9 @@
-Lab : Creating MyFlix application
+My Flix application
+------
 
-
-== STEP 1)  Invoke cqlsh
-    $  cqlsh
-you should see the prompt
-    cqlsh>
-
-==  STEP 2) Create a keyspace 'myflix'
-Enter the following in cqlsh
-cqlsh>
-        CREATE KEYSPACE myflix
-        WITH REPLICATION = {
-            'class' : 'SimpleStrategy',
-            'replication_factor' : 1
-            };
-
-cqlsh>
-        describe keyspace myflix;
-
-
-== STEP 3)  Create a 'features' table
-Features could be movie or tv-show
-
-First use keyspace 'myflix'
-cqlsh>
-        use myflix;
-
-cqlsh>
-        CREATE TABLE features (
-            code text,
-            name text,
-            type text,
-            release_date timestamp,
-            PRIMARY KEY(code)
-        );
-
-
-cqlsh>   describe table features;
+Follow the following steps:
+    create.txt :  creates keyspace and features table
+    insert.txt : insert sample records
+    alter.txt : alter table
+    update.txt : updates entries
+    delete.txt : deletes records

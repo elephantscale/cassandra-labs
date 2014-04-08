@@ -1,0 +1,18 @@
+Lab : Creating MyFlix application
+
+== STEP 1)  Enter cqlsh
+    $   cqlsh
+
+
+== STEP 2)  Alter table
+Alter the features table to add 'studio' column (text)
+    cqlsh>    ALTER TABLE features  ADD studio text;
+
+Verify the table structure
+    cqlsh>    DESCRIBE TABLE features;
+
+
+== STEP 3) query the table
+    cqlsh>  select * from features;
+Q: What is the value of studio column?
+

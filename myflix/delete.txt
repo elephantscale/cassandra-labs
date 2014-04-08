@@ -1,0 +1,35 @@
+Lab : Creating MyFlix application
+
+== STEP 1)  Enter cqlsh
+    $   cqlsh
+
+
+== STEP 2)  Delete a row
+    cqlsh>
+        DELETE FROM features WHERE code = 'madmen';
+verify data
+    cqlsh>    select * from features;
+
+
+== STEP 3)  Delete a column
+    cqlsh>
+        DELETE studio FROM features WHERE code = 'simp';
+verify data
+    cqlsh>    select * from features;
+
+
+== STEP 4)  Delete all 'Movies'
+    cqlsh>
+        DELETE FROM features WHERE type = 'Movies';
+Q : what is the result?
+
+
+== STEP 5) Delete all rows from table
+    cqlsh>
+        TRUNCATE features;
+verify data
+    cqlsh>    select * from features;
+
+
+== STEP 6)  Delete the entire features table including schema
+    cqlsh>   DROP table features;

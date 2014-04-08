@@ -1,0 +1,24 @@
+Lab : Creating MyFlix application
+
+
+== STEP 1)  Invoke cqlsh
+    $  cqlsh
+you should see the prompt
+    cqlsh>
+
+== STEP 2) query all data
+    cqlsh>  select * from features;
+
+
+== STEP 3) query a row
+    cqlsh>  select * from features where code='madmen';
+
+
+== STEP 4)  Display all TV-shows
+        cqlsh>   select * from features WHERE type = 'TV Show';
+Q : What is the result of query execution
+
+
+== STEP 5)  select multiple rows
+        cqlsh>   select * from features WHERE code IN ('madmen', 'ryan');
+

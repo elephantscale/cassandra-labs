@@ -41,3 +41,6 @@ what keyspaces do you see?
 == STEP 5)  get details of  keyspace 'system'
 hint : use describe command
 inspect the output
+
+== STEP 6)  look at keyspaces
+    cqlsh> SELECT * from system.schema_keyspaces;
