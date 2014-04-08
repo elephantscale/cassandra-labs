@@ -4,3 +4,4 @@ generated/
 .DS_Store
 *.zip
 *.log
+*sublime-workspace
