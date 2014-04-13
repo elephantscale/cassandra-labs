@@ -4,7 +4,7 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Metadata;
 import com.datastax.driver.core.Session;
 
-public class TestConnect {
+public class TestConnection {
 
   public static void main(String[] args) throws Exception {
 
@@ -13,7 +13,6 @@ public class TestConnect {
 
     Session session = cluster.connect("myflix");
     System.out.println("session initialized to " + session.getLoggedKeyspace());
-
 
     session.close();
     cluster.close();
