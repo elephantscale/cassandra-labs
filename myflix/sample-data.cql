@@ -1,6 +1,4 @@
-Sample Data
-
-== FEATURES
+use myflix;
 
 CREATE TABLE features (
             code text,
@@ -10,8 +8,6 @@ CREATE TABLE features (
             studio text,
             PRIMARY KEY(code)
         );
-
-cqlsh>
 
 INSERT INTO features (code, name, type, release_date, studio)
 VALUES ('madmen', 'Mad Men', 'TV Show', '2010-01-01', 'AMC');
