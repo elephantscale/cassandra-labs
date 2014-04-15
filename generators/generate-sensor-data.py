@@ -36,14 +36,15 @@ if __name__ == '__main__':
         for x in range(1, entries+1):
             sensor_id = "sensor-%s" % random.randint(1,entries)
             timestamp = random_date(start_date, end_date)
+            month = timestamp.strftime("%Y-%m")  #2014-04
             temp = round(random.uniform(30,90), 1)
             humidity = random.randint(20,100)
 
 
             logline = "INSERT INTO sensors(sensor_id, time, temperature, humidity) VALUES('%s', '%s', %s, %s);" % (sensor_id, timestamp, temp, humidity)
+
+            # for partitioning by month (bonus lab)
+            #logline = "INSERT INTO sensors(sensor_id, time, month, temperature, humidity) VALUES('%s', '%s', '%s', %s, %s);" % (sensor_id, timestamp, month, temp, humidity)
+
             #print logline
             fout.write(logline + "\n")
-
-
-
-
