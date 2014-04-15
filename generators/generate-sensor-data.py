@@ -1,4 +1,4 @@
-# Generate Users
+# Generate Sensor data
 
 ## ----- config
 entries = 100
@@ -45,7 +45,7 @@ if __name__ == '__main__':
             logline = "INSERT INTO %s(sensor_id, time, temperature, humidity) VALUES('%s', '%s', %s, %s);" % (table, sensor_id, timestamp, temp, humidity)
 
             # for partitioning by month (bonus lab)
-            #logline = "INSERT INTO sensors(sensor_id, time, month, temperature, humidity) VALUES('%s', '%s', '%s', %s, %s);" % (sensor_id, timestamp, month, temp, humidity)
+            #logline = "INSERT INTO %s(sensor_id, time, month, temperature, humidity) VALUES('%s', '%s', '%s', %s, %s);" % (table, sensor_id, timestamp, month, temp, humidity)
 
             #print logline
             fout.write(logline + "\n")

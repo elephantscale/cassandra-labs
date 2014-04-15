@@ -1,9 +1,10 @@
-# Generate Users
+# Generate Features
 
 ## ----- config
 entries = 100
 file_name = 'features.data'
 keyspace = 'myflix'
+table = 'features'
 ## --- end config
 
 
@@ -42,11 +43,6 @@ if __name__ == '__main__':
             release_date = random_date(start_date, end_date).date()
             #print release_date
 
-
-            logline = "INSERT INTO features(code, name, release_date, studio, type) VALUES('%s', '%s', '%s', '%s', '%s');" % (code, name, release_date, studio, feature_type)
+            logline = "INSERT INTO %s(code, name, release_date, studio, type) VALUES('%s', '%s', '%s', '%s', '%s');" % (table, code, name, release_date, studio, feature_type)
             #print logline
             fout.write(logline + "\n")
-
-
-
-

@@ -1,18 +1,15 @@
-# Generate Users
+# Generate Ratings
 
 ## ----- config
 entries = 100
 file_name = 'ratings.data'
 keyspace = 'myflix'
+table = 'ratings_by_user'
 ## --- end config
-
 
 import os
 import datetime
 import random
-
-
-
 
 ## --- script main
 if __name__ == '__main__':
@@ -27,10 +24,6 @@ if __name__ == '__main__':
             rating = random.randint(1,5)
 
 
-            logline = "INSERT INTO ratings_by_user(user_name, feature_name, rating) VALUES('%s', '%s', %s);" % (user_name, feature_name, rating)
+            logline = "INSERT INTO %s(user_name, feature_name, rating) VALUES('%s', '%s', %s);" % (table, user_name, feature_name, rating)
             #print logline
             fout.write(logline + "\n")
-
-
-
-

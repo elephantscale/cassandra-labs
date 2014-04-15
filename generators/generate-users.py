@@ -4,6 +4,7 @@
 entries = 100
 file_name = 'users.data'
 keyspace = 'myflix'
+table = 'users'
 ## --- end config
 
 
@@ -30,10 +31,6 @@ if __name__ == '__main__':
 
             all_emails = "[" + ','.join(emails) + "]"
 
-            logline = "INSERT INTO users(user_name, fname, lname, emails) VALUES('%s', '%s', '%s', %s);" % (username, fname, lname, all_emails)
+            logline = "INSERT INTO %s(user_name, fname, lname, emails) VALUES('%s', '%s', '%s', %s);" % (table, username, fname, lname, all_emails)
             #print logline
             fout.write(logline + "\n")
-
-
-
-
