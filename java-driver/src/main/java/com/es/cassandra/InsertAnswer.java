@@ -1,8 +1,9 @@
 package com.es.cassandra;
 
 import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Metadata;
 import com.datastax.driver.core.Session;
+
+// Javadocs : http://www.datastax.com/drivers/java/2.0/index.html
 
 public class InsertAnswer {
 
