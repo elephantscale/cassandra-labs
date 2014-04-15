@@ -36,7 +36,7 @@ if __name__ == '__main__':
         for x in range(1, entries+1):
             sensor_id = "sensor-%s" % random.randint(1,entries)
             timestamp = random_date(start_date, end_date)
-            temp = random.randint(30,90)
+            temp = round(random.uniform(30,90), 1)
             humidity = random.randint(20,100)
 
 
