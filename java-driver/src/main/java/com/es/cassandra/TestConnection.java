@@ -11,10 +11,15 @@ public class TestConnection {
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
     System.out.println("connected to " + cluster.getClusterName());
 
-    Session session = cluster.connect("myflix");
-    System.out.println("session initialized to " + session.getLoggedKeyspace());
+    // TODO : create a session by connecting to cluster
+    // Session  session = cluster.connect ('keyspace to use')
 
-    session.close();
+    // TODO : print out some session details
+    // System.out.println("session initialized to " + session.getLoggedKeyspace());
+
+    // TODO : close the session
+    // session.close();
+
     cluster.close();
 
   }

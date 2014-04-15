@@ -5,6 +5,8 @@ Lab : composite keys
 
 
 == STEP 2)  Define cities table
+    cqlsh>  use myflix;   // select keyspace
+
     cqlsh>    CREATE TABLE cities (
                     country text,
                     city text,
