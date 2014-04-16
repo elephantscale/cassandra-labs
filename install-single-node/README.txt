@@ -24,7 +24,8 @@ Lets create this directory too
 
 
 == STEP 4)  Inspect cassandra configuration
-Configuration is in :  CASSANDRA_INSTALL_DIR/conf
+For package based installations conf dir is : /etc/cassandra/conf
+For tar based installations conf dir is : CASSANDRA_INSTALL_DIR/conf
 inspect the file  : cassandra.yml
 verify the following properties in this file
     data_file_directories
@@ -46,16 +47,18 @@ Use 'jps' command
 Is there 'CassandraDaemon' running?
 
 Use 'nodetool'
-    $   cd CASSANDRA_INSTALL_DIR
-    $   ./bin/nodetool status
+command  : nodetool
+(you may find it in CASSANDRA_INSTALL_DIR/bin)
+    $   nodetool status
 verify the output
 
 
 == STEP 7)  cqlsh
 Start cqlsh and interact with C*
+command : cqlsh
+(you may find it in CASSANDRA_INSTALL_DIR/bin)
 
-    $   cd CASSANDRA_INSTALL_DIR
-    $   ./bin/cqlsh
+    $   cqlsh
 
     cqlsh>   describe cluster;
 
@@ -87,8 +90,9 @@ Start cqlsh and interact with C*
 
 == STEP 8)  Do a stress test
 We will use 'cassandra-stress' tool
-   $   cd CASSANDRA_INSTALL_DIR
-   $   ./tools/bin/cassandra-stress  -h
+command : cassandra-stress
+(you may find it under CASSANDRA_INSTALL_DIR/tools/bin)
+   $   cassandra-stress  -h
 will print out help
 
 Before running the stress test, open another terminal to the server;
@@ -96,7 +100,7 @@ run 'atop' command on this terminal
     $ atop
 
 now lets run the stress
-   $  ./tools/bin/cassandra-stress  -t 8
+   $  cassandra-stress  -t 8
 
 
 Look at atop output (You may want to make atop terminal window wider)

@@ -1,5 +1,8 @@
 package com.es.cassandra;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
@@ -17,15 +20,14 @@ public class QueryAnswer {
     Session  session = cluster.connect ("myflix");
 
     long t1 = System.currentTimeMillis();
-    ResultSet resultSet = session.execute("select * from features");
+    ResultSet resultSet = session.execute("select * from users");
     long t2 = System.currentTimeMillis();
 
     int counter = 0;
     for (Row row : resultSet)
     {
         System.out.println("\n" + counter++);
-        System.out.println ("code : " + row.getString("code"));
-        System.out.println ("name : " + row.getString("name"));
+        System.out.println ("user_name : " + row.getString("user_name"));
     }
 
     session.close();

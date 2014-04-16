@@ -1,0 +1,16 @@
+Installing OPS center
+---------------
+
+$ sudo vi /etc/yum.repos.d/datastax.repo
+and add the following
+    [opscenter]
+    name = DataStax Repository
+    baseurl = http://rpm.datastax.com/community
+    enabled = 1
+    gpgcheck = 0
+
+$  sudo yum install opscenter
+
+$  sudo service opscenterd start
+
+browse to http://opscenter-host:8888/

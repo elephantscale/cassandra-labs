@@ -18,15 +18,14 @@ public class AsyncQueryAnswer {
 
     long t1 = System.currentTimeMillis();
     // Async call is non-blocking
-    ResultSetFuture results = session.executeAsync("select * from features");
+    ResultSetFuture results = session.executeAsync("select * from users");
     long t2 = System.currentTimeMillis();
 
     int counter = 0;
     for (Row row : results.getUninterruptibly())
     {
       System.out.println("\n" + counter++);
-      System.out.println ("code : " + row.getString("code"));
-      System.out.println ("name : " + row.getString("name"));
+      System.out.println ("user_name : " + row.getString("user_name"));
     }
 
     session.close();

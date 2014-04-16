@@ -17,7 +17,7 @@ public class AsyncQuery {
     Session  session = cluster.connect ("myflix");
 
     // Async call is non-blocking
-    // TODO : construct the cql for selecting all entries from FEATURES table
+    // TODO : construct the cql for selecting all entries from USERS table
     ResultSetFuture results = session.executeAsync("..cql query...");
 
     // TODO : iterate over results , check JavaDoc

@@ -18,12 +18,12 @@ public class Query {
 
     Session  session = cluster.connect ("myflix");
 
-    // TODO : construct the cql for selecting all entries from FEATURES tab le
+    // TODO : construct the cql for selecting all entries from USERS table
     ResultSet resultSet = session.execute(".....");
     for (Row row : resultSet)
     {
         // TODO : extract attributes.   row.getString(...);
-      System.out.println ("code : " + row.getString("....."));
+      System.out.println ("user_name : " + row.getString("....."));
     }
 
     session.close();

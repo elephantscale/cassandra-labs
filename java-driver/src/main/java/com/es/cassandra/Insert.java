@@ -14,7 +14,7 @@ public class Insert {
 
     Session  session = null;
     // TODO : connect to keyspace
-    // sesssion = cluster.connect ("myflix");
+    // session = cluster.connect ("myflix");
 
     for (int i = 1; i < 10; i++)
     {

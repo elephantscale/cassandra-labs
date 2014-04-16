@@ -14,12 +14,14 @@ public class InsertAnswer {
 
     Session  session = cluster.connect ("myflix");
 
-    for (int i = 1; i < 10; i++)
+    for (int i = 1; i < 10000; i++)
     {
       String user_name = "user-" + i;
+      String fname = "Joe-" + i;
       String emails = "[" + "'user-" + i + "@email.com'" + "]";
 
-      String cql = "INSERT INTO users(user_name, emails) VALUES ('" + user_name + "', " + emails + ");";
+      String cql = "".format("INSERT INTO users(user_name, fname, emails) " +
+      		"VALUES ('%s', '%s', %s);", user_name, fname, emails);
       System.out.println (cql);
 
       session.execute(cql);
