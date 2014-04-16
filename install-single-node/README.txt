@@ -1,110 +1,31 @@
 Lab : Single Node Install of Cassandra
+-----
 
-== STEP 1)  Login to the node
-
-
-== STEP 2)  Download and unpack Datastax community edition
-    $   wget http://downloads.datastax.com/community/dsc.tar.gz
-    $   tar xvf  dsc.tar.gz
-
-This would create a directory 'dsc-cassandra-VERSION'
-This directory would be 'CASSANDRA_INSTALL_DIR'
+== STEP 1)
+Login to the node (instructor will provide details)
 
 
-== STEP 3) Setup Cassandra directories
-By default cassandra stores data under /var/lib/cassandra
-Create this directory and assign permissions
-    $  sudo mkdir /var/lib/cassandra
-    $  sudo chown $USER   /var/lib/cassandra
-
-Also cassandra log directory is : /var/log/cassandra
-Lets create this directory too
-    $  sudo mkdir /var/log/cassandra
-    $  sudo chown $USER   /var/log/cassandra
+== STEP 2)
+you can install cassandra one of two ways
+    - rpm based install (follow rpm-install.txt)
+    - or tar file based install (follow tar-install.txt)
 
 
-== STEP 4)  Inspect cassandra configuration
-For package based installations conf dir is : /etc/cassandra/conf
-For tar based installations conf dir is : CASSANDRA_INSTALL_DIR/conf
-inspect the file  : cassandra.yml
-verify the following properties in this file
-    data_file_directories
-    commitlog_directory
+== STEP 3)  install ops-center
+follow ops-center.txt
 
 
-== STEP 5)  Start Cassandra
-CASSANDRA_INSTALL_DIR/bin  will have C* executables
-use 'cassandra' command
-    $   cd CASSANDRA_INSTALL_DIR
-    $   ./bin/cassandra
+== STEP 4) Optimizing C*
+Our EC2 instances are using /var/lib/cassandra for storage
+This directory is on a EBS device
+    Not very high IO
+Ephemeral disks are ‘local’, and provide higher IO
+Move cassandra directory from EBS storage to ephemeral storage
 
-Watch the console to make sure no errors
+use   'df -kh'  to find out disk layouts
 
+Create  a cassandra dir in ephemeral storage  (/media/ephemeral0)
+Set correct permissions for this dir
+Update config files and restart c*
+Do benchmarks before & after(cassandra-stress  tool)
 
-== STEP 6)  Verifying Cassandra is running
-Use 'jps' command
-    $  jps
-Is there 'CassandraDaemon' running?
-
-Use 'nodetool'
-command  : nodetool
-(you may find it in CASSANDRA_INSTALL_DIR/bin)
-    $   nodetool status
-verify the output
-
-
-== STEP 7)  cqlsh
-Start cqlsh and interact with C*
-command : cqlsh
-(you may find it in CASSANDRA_INSTALL_DIR/bin)
-
-    $   cqlsh
-
-    cqlsh>   describe cluster;
-
-    cqlsh>    CREATE KEYSPACE test
-              WITH REPLICATION = {
-              'class' : 'SimpleStrategy',
-              'replication_factor' : 1
-              };
-
-    cqlsh>  use test;
-
-    cqlsh>  CREATE TABLE users (
-                userid  text,
-                name  text,
-                PRIMARY KEY (userid)
-            );
-
-    cqlsh>
-        INSERT INTO users(userid, name) VALUES ('user1',  'Frodo');
-        INSERT INTO users(userid, name) VALUES ('user2',  'Sam');
-        INSERT INTO users(userid, name) VALUES ('user3',  'Perigrin');
-
-
-    cqlsh>  select * from users;
-
-
-    cqlsh> exit;
-
-
-== STEP 8)  Do a stress test
-We will use 'cassandra-stress' tool
-command : cassandra-stress
-(you may find it under CASSANDRA_INSTALL_DIR/tools/bin)
-   $   cassandra-stress  -h
-will print out help
-
-Before running the stress test, open another terminal to the server;
-run 'atop' command on this terminal
-    $ atop
-
-now lets run the stress
-   $  cassandra-stress  -t 8
-
-
-Look at atop output (You may want to make atop terminal window wider)
-    which component (cpu, mem, disk) is busy?
-
-
-we just rant a 'insert' benchmark.  Run a 'read' benchmark
