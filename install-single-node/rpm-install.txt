@@ -12,11 +12,11 @@ Pre-requisites:
 == STEP 2)  Add yum repository
     $   sudo vi /etc/yum.repos.d/datastax.repo
 add the following content to this file
-    [cassandra]
-    name = DataStax Repo for DataStax Enterprise
-    baseurl=http://username:password@rpm.datastax.com/enterprise
-    enabled=1
-    gpgcheck=0
+    [datastax]
+    name = DataStax Repository
+    baseurl = http://rpm.datastax.com/community
+    enabled = 1
+    gpgcheck = 0
 
 save and exit
 
