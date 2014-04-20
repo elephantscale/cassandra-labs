@@ -55,6 +55,6 @@ now lets run the stress
 Look at atop output (You may want to make atop terminal window wider)
     which component (cpu, mem, disk) is busy?
 
-Also use 'iostat' command to see disk IO
+Also use 'iostat' command to see disk IO stats
 
 we just rant a 'insert' benchmark.  Run a 'read' benchmark
