@@ -7,7 +7,10 @@ Java API docs :  http://www.datastax.com/drivers/java/2.0/index.html
 
 Lab order:
     connect.txt  : connect to cassandra cluster
-
     insert.txt  : insert data
+    query.txt
+    async.txt
 
+To compile
+    $  mvn package
 ----

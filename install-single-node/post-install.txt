@@ -1,0 +1,60 @@
+Lab : Single Node Install of Cassandra
+Post Install steps:
+
+== STEP 1)  cqlsh
+Start cqlsh and interact with C*
+in tar install cqlsh can be found : /path/to/cassandra/install/bin/cqlsh
+
+    $   cqlsh
+
+    cqlsh>   describe cluster;
+
+    cqlsh>    CREATE KEYSPACE test
+              WITH REPLICATION = {
+              'class' : 'SimpleStrategy',
+              'replication_factor' : 1
+              };
+
+    cqlsh>  use test;
+
+    cqlsh>  CREATE TABLE users (
+                userid  text,
+                name  text,
+                PRIMARY KEY (userid)
+            );
+
+    cqlsh>
+        INSERT INTO users(userid, name) VALUES ('user1',  'Frodo');
+        INSERT INTO users(userid, name) VALUES ('user2',  'Sam');
+        INSERT INTO users(userid, name) VALUES ('user3',  'Perigrin');
+
+
+    cqlsh>  select * from users;
+
+
+    cqlsh> exit;
+
+
+== STEP 8)  Do a stress test
+We will use 'cassandra-stress' tool
+in tar installs cassandra-stress will be in :
+    /path/to/cassandra/install/tools/bin/cassandra-stress
+
+   $   cassandra-stress  -h
+will print out help
+
+Before running the stress test, open another terminal to the node.
+Run 'atop' command on this terminal
+    $ atop
+if atop is not installed, do
+    $ sudo yum install -y atop
+
+now lets run the stress
+   $   cassandra-stress  -t 8
+
+Look at atop output (You may want to make atop terminal window wider)
+    which component (cpu, mem, disk) is busy?
+
+Also use 'iostat' command to see disk IO
+
+we just rant a 'insert' benchmark.  Run a 'read' benchmark
