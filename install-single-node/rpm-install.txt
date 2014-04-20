@@ -12,17 +12,17 @@ Pre-requisites:
 == STEP 2)  Add yum repository
     $   sudo vi /etc/yum.repos.d/datastax.repo
 add the following content to this file
-    [datastax]
-    name = DataStax Repository
-    baseurl = http://rpm.datastax.com/community
-    enabled = 1
-    gpgcheck = 0
+
+[datastax]
+name = DataStax Repository
+baseurl = http://rpm.datastax.com/community
+enabled = 1
+gpgcheck = 0
 
 save and exit
 
 
 == STEP 3) install cassandra
-
     $ sudo yum  install dsc20
 
 
@@ -41,11 +41,28 @@ verify the following properties in this file
 == STEP 6)  Verifying Cassandra is running
 Use 'jps' command
     $  jps
+    or
+    $ sudo /usr/java/latest/bin/jps
 Is there 'CassandraDaemon' running?
 
 Use 'nodetool' command
     $   nodetool    status
 verify the output
+
+
+** Troubleshooting:
+If Cassandra isn't starting up, check the logs  in '/var/log/cassandra'  directory
+
+If there is an error about Java class mismatches, please do the following fix.
+    $ sudo vi /etc/cassandra/conf/cassandra-env.sh
+go to around line number 90
+add these two lines
+
+export JAVA_HOME='/usr/java/latest'
+export JAVA=$JAVA_HOME/bin/java
+
+save and exit
+then start Cassandra again
 
 
 == STEP 7)  cqlsh
@@ -96,5 +113,7 @@ now lets run the stress
 
 Look at atop output (You may want to make atop terminal window wider)
     which component (cpu, mem, disk) is busy?
+
+Also use 'iostat' command to see disk IO
 
 we just rant a 'insert' benchmark.  Run a 'read' benchmark

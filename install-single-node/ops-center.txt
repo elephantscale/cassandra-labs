@@ -6,12 +6,15 @@ You can skip adding this repository if you had already done so earlier
 
 $ sudo vi /etc/yum.repos.d/datastax.repo
 and add the following
-    [datastax]
-    name = DataStax Repository
-    baseurl = http://rpm.datastax.com/community
-    enabled = 1
-    gpgcheck = 0
 
+[datastax]
+name = DataStax Repository
+baseurl = http://rpm.datastax.com/community
+enabled = 1
+gpgcheck = 0
+
+
+save and exit
 
 == STEP 2)
     $  sudo yum install opscenter
@@ -19,3 +22,14 @@ and add the following
 
 == STEP 3)
 browse to http://opscenter-host:8888/
+Choose 'manage existing cluster'
+enter 'localhost'  as hostname
+
+
+== STEP 4)  install 'agents'
+in ops-center webui  (top, center)  it will say '0 agents connected'
+Click on 'Fix'
+Click on 'credentials'
+Enter  user-name / password you used to login to the cluster
+Click 'install'
+

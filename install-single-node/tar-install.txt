@@ -84,8 +84,9 @@ Start cqlsh and interact with C*
 
 
 == STEP 8)  Do a stress test
-We will use 'cassandra-stress' tool
-   $   CASSANDRA_INSTALL_DIR/tools/bin/cassandra-stress  -h
+We will use 'cassandra-stress' tool (found in CASSANDRA_INSTALL_DIR/tools/bin/cassandra-stress)
+    $   cd  CASSANDRA_INSTALL_DIR
+    $  ./tools/bin/cassandra-stress -h
 will print out help
 
 Before running the stress test, open another terminal to the server;
@@ -93,10 +94,13 @@ run 'atop' command on this terminal
     $ atop
 
 now lets run the stress
-   $   CASSANDRA_INSTALL_DIR/tools/bin/cassandra-stress  -t 8
+    $  cd  CASSANDRA_INSTALL_DIR
+    $  ./tools/bin/cassandra-stress  -t 8
 
 
 Look at atop output (You may want to make atop terminal window wider)
     which component (cpu, mem, disk) is busy?
+
+Also use 'iostat' command to see disk IO
 
 we just rant a 'insert' benchmark.  Run a 'read' benchmark
