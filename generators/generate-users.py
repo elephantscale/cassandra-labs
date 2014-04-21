@@ -20,14 +20,14 @@ if __name__ == '__main__':
         fout.write("use %s;\n\n" % keyspace)
 
         for x in range(1, entries+1):
-            username = "user-%s" % x
-            fname = "Joe-%s" % x
-            lname = "Smith-%s" % x
+            username = "user%s" % x
+            fname = "Joe %s" % x
+            lname = "Smith %s" % x
 
             num_emails = random.randint(1,3)
             emails = []
             for y in range(1, num_emails+1):
-                emails.append("'user-%s.%s@email.com'" % (x, y))
+                emails.append("'user%s.%s@email.com'" % (x, y))
 
             all_emails = "[" + ','.join(emails) + "]"
 

@@ -5,6 +5,7 @@ entries = 100
 file_name = 'ratings.data'
 keyspace = 'myflix'
 table = 'ratings_by_user'
+table2 = 'ratings_by_feature'
 ## --- end config
 
 import os
@@ -19,11 +20,16 @@ if __name__ == '__main__':
         fout.write("use %s;\n\n" % keyspace)
 
         for x in range(1, entries+1):
-            user_name = "user-%s" % random.randint(1,entries)
-            feature_name = "feature-%s" % random.randint(1,entries)
+            user_name = "user%s" % random.randint(1,entries)
+            feature_name = "feature%s" % random.randint(1,entries)
             rating = random.randint(1,5)
 
 
-            logline = "INSERT INTO %s(user_name, feature_name, rating) VALUES('%s', '%s', %s);" % (table, user_name, feature_name, rating)
+            logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table, user_name, feature_name, rating)
             #print logline
             fout.write(logline + "\n")
+
+            # second table : raitings_by_feature
+            #logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table2, user_name, feature_name, rating)
+            #print logline
+            #fout.write(logline + "\n")

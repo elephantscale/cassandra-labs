@@ -36,9 +36,9 @@ if __name__ == '__main__':
         fout.write("use %s;\n\n" % keyspace)
 
         for x in range(1, entries+1):
-            code = "feature-%s" % x
-            name = "Feature-%s" % x
-            studio = "studio-%s" % random.randint(1,20)
+            code = "feature%s" % x
+            name = "Feature %s" % x
+            studio = "studio%s" % random.randint(1,20)
             feature_type = random.choice(show_type)
             release_date = random_date(start_date, end_date).date()
             #print release_date

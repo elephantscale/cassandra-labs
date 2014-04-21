@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
         for x in range(1, entries+1):
             video_id = uuid.uuid1()
-            user_name = "user-%s" % random.randint(1,100)
-            video_name = "video-%s" % x
+            user_name = "user%s" % random.randint(1,100)
+            video_name = "video %s" % x
             location = {'us' : 'http://right.here'}
 
             num_tags = random.randint(1,3)
