@@ -20,8 +20,8 @@ if __name__ == '__main__':
         fout.write("use %s;\n\n" % keyspace)
 
         for x in range(1, entries+1):
-            user_name = "user%s" % random.randint(1,entries)
-            feature_name = "feature%s" % random.randint(1,entries)
+            user_name = "user-%s" % random.randint(1,entries)
+            feature_name = "feature-%s" % random.randint(1,entries)
             rating = random.randint(1,5)
 
 

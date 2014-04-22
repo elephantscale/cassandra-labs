@@ -30,11 +30,13 @@ if __name__ == '__main__':
             month = timestamp.strftime("%Y-%m")  #2014-04
             temp = round(random.uniform(30,90), 1)
             humidity = random.randint(20,100)
+            ## TODO : generate co_level, a float between 0.1  to 0.7
+            # co_level = ???
 
             logline = "INSERT INTO %s(sensor_id, time, temperature, humidity) VALUES('%s', '%s', %s, %s);" % (table, sensor_id, timestamp, temp, humidity)
 
-            # for partitioning by month (bonus lab)
-            #logline = "INSERT INTO %s(sensor_id, time, month, temperature, humidity) VALUES('%s', '%s', '%s', %s, %s);" % (table, sensor_id, timestamp, month, temp, humidity)
+            ## TODO :  for partitioning by month (bonus lab)
+            #logline = "INSERT INTO %s(sensor_id, time, month, temperature, humidity, co_level) VALUES('%s', '%s', '%s', %s, %s, %s);" % (table, sensor_id, timestamp, month, temp, humidity, co_level)
 
             #print logline
             fout.write(logline + "\n")
