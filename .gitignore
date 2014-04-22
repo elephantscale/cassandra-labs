@@ -8,3 +8,4 @@ generated/
 *.data
 .classpath
 .project
+*.pyc

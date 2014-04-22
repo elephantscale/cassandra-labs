@@ -11,20 +11,10 @@ table = 'sensors'
 import os
 import datetime
 import random
+from myutils import *
 
 start_date = datetime.datetime(2014,1,1,0,0,0)
 end_date = datetime.datetime(2014,4,1,0,0,0)
-
-
-def random_date(start, end):
-    """
-    This function will return a random datetime between two datetime
-    objects.
-    """
-    delta = end - start
-    int_delta = (delta.days * 24 * 60 * 60) + delta.seconds
-    random_second = random.randrange(int_delta)
-    return start + datetime.timedelta(seconds=random_second)
 
 
 ## --- script main
@@ -36,7 +26,7 @@ if __name__ == '__main__':
 
         for x in range(1, entries+1):
             sensor_id = "sensor-%s" % random.randint(1,entries)
-            timestamp = random_date(start_date, end_date)
+            timestamp = random_timestamp(start_date, end_date)
             month = timestamp.strftime("%Y-%m")  #2014-04
             temp = round(random.uniform(30,90), 1)
             humidity = random.randint(20,100)
