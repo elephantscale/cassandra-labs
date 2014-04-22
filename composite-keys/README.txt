@@ -7,12 +7,13 @@ Lab : composite keys
 == STEP 2)  Define cities table
     cqlsh>  use myflix;   // select keyspace
 
-    cqlsh>    CREATE TABLE cities (
+    cqlsh>
+            CREATE TABLE cities (
                     country text,
                     city text,
                     population int,
                     PRIMARY KEY (country, city)
-              );
+             );
 
 
 == STEP 3)  Insert some sample data
