@@ -41,7 +41,6 @@ if __name__ == '__main__':
             temp = round(random.uniform(30,90), 1)
             humidity = random.randint(20,100)
 
-
             logline = "INSERT INTO %s(sensor_id, time, temperature, humidity) VALUES('%s', '%s', %s, %s);" % (table, sensor_id, timestamp, temp, humidity)
 
             # for partitioning by month (bonus lab)
