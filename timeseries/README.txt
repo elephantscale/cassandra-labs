@@ -37,7 +37,7 @@ Lab : Time Series
         VALUES ('sensor1', '2014-01-01 10:00:30',  74,  34, 2.6);
 
 verify data
-    cqlsh>   select * from senosors;
+    cqlsh>   select * from sensors;
 
 Inspect the sort order  on time.  Which record is first?
 
