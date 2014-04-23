@@ -14,7 +14,7 @@ public class Insert {
 
     Session  session = null;
     // TODO : connect to keyspace
-    // session = cluster.connect ("myflix");
+    // session = cluster. ......
 
     for (int i = 1; i < 10; i++)
     {
@@ -23,11 +23,11 @@ public class Insert {
 
       // TODO : construct a cql statement like the follows
       //   insert into users(....) VALUES (......)
-      String cql = "INSERT INTO users(.......)";
+      String cql = "INSERT INTO users(.......) VALUES (....)";
       System.out.println (cql);
 
       // TODO : execute cql in session
-      // session.execute(cql);
+      // session......(cql)
     }
 
     session.close();

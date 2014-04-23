@@ -16,14 +16,19 @@ public class Query {
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
     System.out.println("connected to " + cluster.getClusterName());
 
-    Session  session = cluster.connect ("myflix");
+    Session  session = null;
+    // TODO : connect to keyspace
+    // session = cluster. ......
 
     // TODO : construct the cql for selecting all entries from USERS table
     ResultSet resultSet = session.execute(".....");
     for (Row row : resultSet)
     {
-        // TODO : extract attributes.   row.getString(...);
+      // TODO : extract attributes.   row.getString(...);
       System.out.println ("user_name : " + row.getString("....."));
+
+      // TODO bonus : print emails
+      // Hint : Refer to JavaDocs for 'Row' for the correct 'get...' method
     }
 
     session.close();

@@ -14,13 +14,16 @@ public class AsyncQuery {
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
     System.out.println("connected to " + cluster.getClusterName());
 
-    Session  session = cluster.connect ("myflix");
+    Session  session = null;
+    // TODO : connect to keyspace
+    // session = cluster. ......
 
     // Async call is non-blocking
     // TODO : construct the cql for selecting all entries from USERS table
     ResultSetFuture results = session.executeAsync("..cql query...");
 
     // TODO : iterate over results , check JavaDoc
+    // Hint : getUninterruptibly()
 
 
     session.close();
