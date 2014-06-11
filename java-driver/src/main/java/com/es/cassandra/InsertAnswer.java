@@ -14,7 +14,7 @@ public class InsertAnswer {
 
     Session  session = cluster.connect ("myflix");
 
-    for (int i = 1; i < 10000; i++)
+    for (int i = 1; i < 1000; i++)
     {
       String user_name = "user-" + i;
       String fname = "Joe-" + i;

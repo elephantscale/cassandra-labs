@@ -3,15 +3,19 @@ Lab : Time Series Generating Data
 
 == STEP 1) Generate some sensor data
 Use generator scripts to create some sensor data
+
     $   cd  cassandra-labs/generators
 
 Inspect file 'generate-sensor-data.py'
 Run it and generate some data
+
     $   python generate-sensor-data.py
+
 This will generate a file 'sensor.data'
 Inspect file 'sensor.data'
 
 Import the data using cqlsh
+
     $   cqlsh -f sensor.data
 
 use cqlsh to inspect the table

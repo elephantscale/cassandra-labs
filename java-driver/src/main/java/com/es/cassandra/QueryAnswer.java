@@ -28,6 +28,10 @@ public class QueryAnswer {
     {
         System.out.println("\n" + counter++);
         System.out.println ("user_name : " + row.getString("user_name"));
+
+        // get email as a list
+        List<String> emails = row.getList('emails', String.class);
+        System.out.println ("emails : " + emails)
     }
 
     session.close();
@@ -36,4 +40,4 @@ public class QueryAnswer {
     System.out.println ("-- select query took " + (t2-t1) + " ms");
   }
 
-}
+    }
