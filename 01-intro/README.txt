@@ -42,5 +42,6 @@ what keyspaces do you see?
 hint : use describe command
 inspect the output
 
+
 == STEP 6)  look at keyspaces
     cqlsh> SELECT * from system.schema_keyspaces;
