@@ -57,4 +57,5 @@ Look at atop output (You may want to make atop terminal window wider)
 
 Also use 'iostat' command to see disk IO stats
 
-we just rant a 'insert' benchmark.  Run a 'read' benchmark
+We just ran a 'insert' benchmark.
+Also run a 'read' benchmark

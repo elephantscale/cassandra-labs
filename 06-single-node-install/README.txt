@@ -10,10 +10,13 @@ you can install cassandra one of two ways
     - rpm based install (follow rpm-install.txt)
     - or tar file based install (follow tar-install.txt)
 
+
 == STEP 3) follow file : post-install.txt
+
 
 == STEP 4)  install ops-center
 follow ops-center.txt
+
 
 == STEP 5) Optimizing C*
 Our EC2 instances are using /var/lib/cassandra for storage
@@ -25,7 +28,7 @@ Use 'df -kh'  command to see what disks are available.
 
 Lets see the IO throughput on both devices. we will use 'dd' command
 
-    $   sudo dd  if=/dev/zero  of=/tmp/a   bs=1M  count=100  conv=fsync
+    $   sudo dd  if=/dev/zero  of=/tmp/a   bs=1M  count=1000  conv=fsync
 
 Explanation:
     - if : input file,  we read from a special device file that always returns zero
