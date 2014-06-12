@@ -16,6 +16,7 @@ from myutils import *
 start_date = datetime.datetime(2000,1,1,0,0,0)
 end_date = datetime.datetime(2014,1,1,0,0,0)
 show_type = ['Movie', 'TV Show', 'Live Comedy']
+studios = ['HBO', 'Disney',  'FOX', 'ABC', 'Columbia', 'Netflix', 'FX', 'Lucas']
 
 
 
@@ -29,7 +30,7 @@ if __name__ == '__main__':
         for x in range(1, entries+1):
             code = "feature-%s" % x
             name = "Feature %s" % x
-            studio = "studio-%s" % random.randint(1,20)
+            studio = random.choice(studios)
             feature_type = random.choice(show_type)
             release_date = random_timestamp(start_date, end_date).date()
             #print release_date

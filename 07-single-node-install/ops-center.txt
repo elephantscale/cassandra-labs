@@ -21,7 +21,8 @@ save and exit
     $  sudo service opscenterd start
 
 == STEP 3)
-browse to http://opscenter-host:8888/
+browse to http://<opscenter-host>:8888/
+<opscenter-host> would be your c* node hostname.
 Choose 'manage existing cluster'
 enter 'localhost'  as hostname
 

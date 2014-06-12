@@ -1,7 +1,7 @@
 # Generate Ratings
 
 ## ----- config
-entries = 100
+entries = 500
 file_name = 'ratings.data'
 keyspace = 'myflix'
 table = 'ratings_by_user'
@@ -26,10 +26,8 @@ if __name__ == '__main__':
 
 
             logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table, user_name, feature_name, rating)
-            #print logline
             fout.write(logline + "\n")
 
             # second table : raitings_by_feature
-            #logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table2, user_name, feature_name, rating)
-            #print logline
-            #fout.write(logline + "\n")
+            logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table2, user_name, feature_name, rating)
+            fout.write(logline + "\n")

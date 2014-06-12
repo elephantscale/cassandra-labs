@@ -40,7 +40,6 @@ if __name__ == '__main__':
             all_tags = "{" + ','.join(tags) + "}"
 
             logline = "INSERT INTO %s(video_id, video_name, user_name, tags, upload_date) VALUES(%s, '%s', '%s', %s, '%s');" % (table, video_id, video_name, user_name, all_tags, upload_time)
-            #print logline
             fout.write(logline + "\n")
 
             #TODO : also insert the data into videos_by_users table
