@@ -1,12 +1,13 @@
 # Generate Ratings
 
 ## ----- config
-entries = 500
+entries = 1000
 file_name = 'ratings.data'
 keyspace = 'myflix'
 table = 'ratings_by_user'
 table2 = 'ratings_by_feature'
 ## --- end config
+user_entries = entries / 10
 
 import os
 import datetime
@@ -20,8 +21,8 @@ if __name__ == '__main__':
         fout.write("use %s;\n\n" % keyspace)
 
         for x in range(1, entries+1):
-            user_name = "user-%s" % random.randint(1,entries)
-            feature_name = "feature-%s" % random.randint(1,entries)
+            user_name = "user-%s" % random.randint(1,user_entries)
+            feature_name = "feature-%s" % random.randint(1,user_entries)
             rating = random.randint(1,5)
 
 
