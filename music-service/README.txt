@@ -20,6 +20,7 @@ Discuss design decisions.
 
 
 == STEP 2) Complete data generators that will generate some data
+Use   'mvn  eclipse:eclipse'  to generate eclipse project
 
 == STEP 3) Write main / driver program to do the following:
 - given a userid
