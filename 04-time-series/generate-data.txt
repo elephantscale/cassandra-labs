@@ -37,10 +37,3 @@ After modifying the file run the script to generate new set of data.
 == STEP 3)
 delete all data in 'sensors' table
 re-import new data
-
-
-== BONUS LAB)
-Complete bonus lab in 'README.txt' : adding month to partition key
-Modify 'generate-sensor-data.py' to generate data for new table
-Hint : Look at second 'logline' around line 48
-

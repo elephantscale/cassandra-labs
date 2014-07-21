@@ -1,0 +1,23 @@
+partitioning.txt
+----
+
+== STEP 1 ) Create a table partitioned by sensor_id and month
+Hint:
+    create table .... (
+        ....
+        month text,
+
+        PRIMARY KEY ( (sensor_id, month),  time)
+    )
+    WITH CLUSTERING ORDER BY (time DESC);
+
+insert some sample data:
+INSERT INTO sensors(sensor_id, time, month, temperature, humidity, co_level)
+VALUES ('sensor1', '2014-01-01 10:00:30', '2014-01',  74,  34, 2.6);
+
+Query table and look at the sorting order
+
+
+== STEP 2)
+Modify 'generate-sensor-data.py' to generate data for new table
+Hint : Look at second 'logline' around line 48

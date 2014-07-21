@@ -6,6 +6,8 @@ Lab : Time Series
 
 == STEP 2) Define sensor table
     cqlsh>
+            use myflix;  // use existing keyspace
+
             CREATE TABLE sensors (
                 sensor_id text,
                 time  timestamp,
@@ -14,7 +16,6 @@ Lab : Time Series
                 co_level float,
 
                 PRIMARY KEY (sensor_id,  time)
-
             )
             WITH CLUSTERING ORDER BY (time DESC);
 
@@ -39,33 +40,15 @@ Lab : Time Series
 verify data
     cqlsh>   select * from sensors;
 
-Inspect the sort order  on time.  Which record is first?
+Q : Inspect the sort order  on time.  Which record is first?
 
 
 == STEP 4)  get the latest data from sensor1
-    cqlsh>    select * from sensors  where sensor_id = 'sensor1' LIMIT 1;
-
-do you get the earliest time or latest time?
+hint : use LIMIT 1
+Q : do you get the earliest time or latest time?
 
 
 == STEP 5)  Find all sensor readings after a certain time  (2014-01-01 10:00:10)
     cqlsh>   SELECT ........ WHERE   time > .....
 
-what happens when you run the query?
-
-
-== BONUS LAB ) Create a table partitioned by sensor_id and month
-Hint:
-    create table .... (
-        ....
-        month text,
-
-        PRIMARY KEY ( (sensor_id, month),  time)
-    )
-    WITH CLUSTERING ORDER BY (time DESC);
-
-insert some sample data:
-INSERT INTO sensors(sensor_id, time, month, temperature, humidity, co_level)
-VALUES ('sensor1', '2014-01-01 10:00:30', '2014-01',  74,  34, 2.6);
-
-Query table and look at the sorting order
+Q : what happens when you run the query?

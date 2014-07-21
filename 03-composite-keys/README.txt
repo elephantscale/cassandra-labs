@@ -29,6 +29,7 @@ Lab : composite keys
 verify data
     cqlsh>   select * from cities;
 
+Q : Is there a sorting order?
 
 == STEP 4)  query cities in country 'USA'
     cqlsh>    SELECT * FROM cities  WHERE country = 'USA';
