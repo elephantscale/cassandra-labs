@@ -1,23 +1,45 @@
 partitioning.txt
 ----
 
-== STEP 1 ) Create a table partitioned by sensor_id and month
+== STEP 1 ) Create a NEW table ('sensors2') partitioned by sensor_id and month
 Hint:
-    create table .... (
+    create table sensors2 (
         ....
         month text,
 
         PRIMARY KEY ( (sensor_id, month),  time)
+        // don't forget to group (sensor_id + month)
     )
     WITH CLUSTERING ORDER BY (time DESC);
 
 insert some sample data:
-INSERT INTO sensors(sensor_id, time, month, temperature, humidity, co_level)
-VALUES ('sensor1', '2014-01-01 10:00:30', '2014-01',  74,  34, 2.6);
+    INSERT INTO sensors(sensor_id, time, month, temperature, humidity, co_level)
+    VALUES ('sensor1', '2014-01-01 10:00:30', '2014-01',  74,  34, 2.6);
+
+    INSERT INTO sensors(sensor_id, time, month, temperature, humidity, co_level)
+    VALUES ('sensor1', '2014-01-01 10:10:00', '2014-01',  73,  33, 2.5);
+
+    INSERT INTO sensors(sensor_id, time, month, temperature, humidity, co_level)
+    VALUES ('sensor2', '2014-01-01 10:10:00', '2014-01',  63,  23, 4.5);
 
 Query table and look at the sorting order
 
 
-== STEP 2)
+== STEP 2) generate data
 Modify 'generate-sensor-data.py' to generate data for new table
-Hint : Look at second 'logline' around line 48
+Hint 1 : change the table name to 'sensors2' (line 7)
+Hint 2 : Also increase the amount of data generated, 'entries' (line 4)
+Hint 3 : Save data to new table, 'logline' (line 38)
+comment out the old logline (line 36)
+
+
+== STEP 3) inspect the data in cqlsh
+    cqlsh >    select * from sensors2;
+
+
+== STEP 4) inspect data using cassandra-cli
+    $  cassandra-cli
+    cli>   use myflix;
+    cli>   list sensors2;
+
+Q : can you identify partitions?

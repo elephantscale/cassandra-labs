@@ -35,5 +35,5 @@ After modifying the file run the script to generate new set of data.
 
 
 == STEP 3)
-delete all data in 'sensors' table
+delete all data in 'sensors' table (hint : drop)
 re-import new data
