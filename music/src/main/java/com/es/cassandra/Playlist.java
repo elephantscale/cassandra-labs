@@ -34,9 +34,8 @@ public class Playlist {
 		songIds += ",";
 	    songIds += s;
 	}
+    // construct the sql -- songIds will be a list
 	String cql = "";
-	// cql = String
-	// .format("insert into playlists(id, name, userid , songs) values('%s', ??, ?? , ??)");
 	System.out.println(cql);
 	session.execute(cql);
     }

@@ -27,15 +27,13 @@ public class TestQuery {
 	    System.out
 		    .println(userid + " has playlists : " + playlistIds);
 
-	    // querying for playlists...
+	    // TODO : retrieve each playlist
 	    for (UUID playlistId : playlistIds) {
 		System.out.println("   querying  playlist : " + playlistId);
 
 		// TODO : complete the play list query
 		// TODO : For each playlist query songs
 		// TODO : print out the name of each song
-
-
 
 		System.out.println();
 	    }

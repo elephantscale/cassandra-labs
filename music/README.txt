@@ -102,3 +102,15 @@ compile the code using 'mvn package'  command
     $ java -cp target/music-1.0.0.jar:target/dependency-jars/*   com.es.cassandra.TestQuery
 
 Verify the output
+
+
+== BONUS Lab) Data modeling
+So far we have hand-crafted queries for loading objects.  A better approach is each object loads it's data from C*.
+
+Implement a method  in Song.java
+    Song load(String songId)
+This method will retrieve the given song information from C* and create a 'Song' java object with all the right values.
+
+Similarly write load()  methods for Playlist and User models.
+
+Write a Test code to exercise the load() methods.

@@ -24,9 +24,8 @@ public class User {
 	    playlistIds += s;
 	}
 
+    // TODO : construct the cql, playlists will be a set
 	String cql = "";
-	// cql = String
-	// .format("insert into users(id, name, playlists) values(???, ???, ???)");
 	System.out.println(cql);
 	session.execute(cql);
     }
