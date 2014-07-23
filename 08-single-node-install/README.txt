@@ -43,7 +43,8 @@ Now do the same dd command to ephemeral disk.  Change the output file to a file 
 
 Any noticeable difference?
 
-Move cassandra directory from EBS storage to ephemeral storage
+Move cassandra directories (data_file_directories,  commitlog_directory) from EBS storage to ephemeral storage.
+
 Create  a cassandra dir in ephemeral storage  (/media/ephemeral0)
 Set correct permissions for this dir
 Update config files and restart c*

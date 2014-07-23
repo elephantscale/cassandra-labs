@@ -57,5 +57,9 @@ Look at atop output (You may want to make atop terminal window wider)
 
 Also use 'iostat' command to see disk IO stats
 
+Interpreting stress-test results:
+- http://www.datastax.com/documentation/cassandra/1.2/cassandra/tools/toolsCStressOutput_c.html
+- http://www.datastax.com/docs/1.1/references/stress_java
+
 We just ran a 'insert' benchmark.
 Also run a 'read' benchmark

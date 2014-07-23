@@ -28,7 +28,7 @@ save and exit
 
 == STEP 4)  Inspect cassandra configuration
 conf dir is : /etc/cassandra/conf
-inspect the file  : cassandra.yml
+inspect the file  : cassandra.yaml
 verify the following properties in this file
     data_file_directories
     commitlog_directory
@@ -53,7 +53,7 @@ verify the output
 ** Troubleshooting:
 If Cassandra isn't starting up, check the logs  in '/var/log/cassandra'  directory
 
-If there is an error about Java class mismatches, please do the following fix.
+If there is an error about Java class mismatches or Java 7, please do the following fix.
     $ sudo vi /etc/cassandra/conf/cassandra-env.sh
 go to around line number 90, just after the line saying '# determine JVM'
 add these two lines
