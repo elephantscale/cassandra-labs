@@ -26,6 +26,6 @@ Q : What is the result of query execution
 == BONUS LAB)  finding timestamp
 Find the timestamp C* sets for each value update
 Hint : CQL reference : http://www.datastax.com/documentation/cql/3.1/
-Search for 'select' and look at examples
+Search for 'ttl'
 
 Q : What happens when you try to find the updated timestamp for code (rowkey)?  why?

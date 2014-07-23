@@ -29,6 +29,6 @@ if __name__ == '__main__':
             logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table, user_name, feature_name, rating)
             fout.write(logline + "\n")
 
-            # second table : raitings_by_feature
-            logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table2, user_name, feature_name, rating)
-            fout.write(logline + "\n")
+            # second table : ratings_by_feature
+            #logline = "INSERT INTO %s(user_name, feature_code, rating) VALUES('%s', '%s', %s);" % (table2, user_name, feature_name, rating)
+            #fout.write(logline + "\n")

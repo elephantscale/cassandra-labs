@@ -4,7 +4,7 @@ Objective :
     - Design myflix tables
     - populate the tables with data
 
-(Instructor : solution in /labs-solution/cassandra/myflix-solutions.txt)
+(Instructor : solution in /labs-private/solutions/cassandra-solutions/myflix-solutions.txt)
 
 == STEP 1)  create table for 'features'
 Note : If you already have this table defined, you may skip this step.
@@ -12,6 +12,7 @@ Or drop the previous table and re-create it as follows.
 
     $   cqlsh
     cqlsh>
+        use myflix;
 
         CREATE TABLE features (
                 code text,
@@ -43,10 +44,7 @@ Import the features.data
     $   cqlsh   -f features.data
 
 Verify the data from cqlsh
-    $  cqlsh
-    cqlsh>
-            use myflix;
-            select * from  features limit 10;
+    cqlsh> select * from  features limit 10;
 
 
 == STEP 3)  Create indexes for features table
@@ -54,12 +52,17 @@ We want to find all features by a particular studio, say 'HBO'
 Try this query:
     cqlsh>   select *  from features where studio = 'HBO';
 
-This query will fail,  we need to add an index
-    cqlsh >  create index  idx_studio on features(studio);
+This query will fail,  we need to add an index.
+syntax :
+    cqlsh > create index name_of_index  on table(column_name)
+
+Reference : http://www.datastax.com/documentation/cql/3.1/cql/cql_reference/create_index_r.html
 
 Now do the same query again.
 
 Also add an index on 'type' column
+Query for all features of type=Movie and studio=HBO
+What is the result of query execution?  why?
 
 
 == STEP 4) users table
@@ -110,3 +113,12 @@ Q3 : Find all ratings by a particular user
 Q4 : Find all ratings by a feature / movie
 
 Q5 : Find the best / worst rating for a movie
+
+
+== STEP 8) use cassandra-cli to inspect data
+    $   cassandra-cli
+    cli>   use myflix;
+    cli>   list ratings_by_user;
+    cli>   list ratings_by_features;
+
+Q : how is c* storing the data?

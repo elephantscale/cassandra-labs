@@ -11,3 +11,6 @@ To login to cluster
 
 Verify Cassandra is running by
     $   nodetools  status
+
+------
+Lab order
