@@ -1,9 +1,24 @@
 Cassandra Labs
 --------------
+Lab order
+------
+    intro
+    cql
+    composite-keys
+    time-series
+    counter
+    myflix
+    java-driver
+    single-node-install
+    debug
+    music  (final lab)
 
-Amazon AMI : ami-67dcc10e
-Use m3.large  or m3.xlarge instances (These instances have SSDs!)
+Usage:
+--
+For first part of class use Amazon AMI : ami-67dcc10e
+m1.medium is ok
 username : ec2-user
+password : usual
 ssh key : cassandra-labs2.pem
 
 To login to cluster
@@ -12,5 +27,6 @@ To login to cluster
 Verify Cassandra is running by
     $   nodetools  status
 
-------
-Lab order
+
+For install lab, spin up instances of CLEAN centos VMs
+AMI : 
