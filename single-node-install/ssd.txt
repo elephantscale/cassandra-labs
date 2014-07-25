@@ -1,0 +1,38 @@
+Benchmarking C* on SSD
+----------------------
+Our EC2 instances are using /var/lib/cassandra for storage
+This directory is on a EBS device -- a network drive
+    --> Not very high IO
+Ephemeral disks are ‘local’, and provide higher IO
+Your instance might have a SSD (flash drive) as local drive (verify with instructor)
+
+Use 'df -kh'  command to see what disks are available.
+
+Let's see the IO throughput on both devices. we will use 'dd' command
+
+    $   sudo dd  if=/dev/zero  of=/tmp/a   bs=1M  count=1000  conv=fsync
+
+Explanation:
+    - if : input file,  we read from a special device file that always returns zero
+    - of : output file, destination file we want to write to
+    - bs : block size , 1 Mega bytes
+    - count : how many blocks to write, 1000
+    - conv : fsync forces dd to flush data to disk at the end
+    - we are writing 1G of data (1M x 1000)
+
+Now do the same dd command to ephemeral disk.  Change the output file to a file on ephemeral disk (e.g. :  /media/ephemeral0/a)
+
+Any noticeable difference?
+
+Let's use the local drives for C*
+    - stop C*
+        $  sudo service cassandra stop
+    - move cassandra directories (data_file_directories,  commitlog_directory) from EBS storage to ephemeral storage.
+    - update storage directory location in the C* config file :
+            /etc/cassandra/conf/cassandra.yaml
+    - restart C*
+        $  sudo service cassandra start
+    - verify C* is running
+    - do benchmarks (cassandra-stress tool) and compare
+
+
