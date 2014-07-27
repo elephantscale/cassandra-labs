@@ -39,8 +39,17 @@ Inspect the table
 Q: Do you see any duplicates?   why (not) ?
 
 
-== STEP 7)  Display all TV-shows
-        cqlsh>   select * from features WHERE type = 'TV Show';
-Q : What is the result of query execution
+== STEP 7)  TTL -- Time To Live
+Insert data with TTL
+    INSERT INTO features(code, name)
+    VALUES(‘simp’, ‘The Simpsons’)
+    USING TTL 20;
 
+Issue a query immediately
+    select * from features;
 
+Q: Do you see 'simpsons' ?
+
+Wait at least 20 seconds, and inspect the table
+    select * from features;
+Q: Do you see 'simpsons' now ?
