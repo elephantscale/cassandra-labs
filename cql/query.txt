@@ -15,7 +15,7 @@ you should see the prompt
 
 
 == STEP 4)  Display all TV-shows
-        cqlsh>   select * from features WHERE type = 'TV Show';
+hint :    .......... where type = 'TV Show'
 Q : What is the result of query execution
 
 

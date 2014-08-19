@@ -32,6 +32,8 @@ you should see the prompt
 Q : Is the output sorted in anyway?
       Rows?   Columns?
 
+Q : Is the output sorted by primary key (code) ? why (not) ?
+
 
 == STEP 6)  Insert the sample data again (using step 4)
 Inspect the table
@@ -42,7 +44,7 @@ Q: Do you see any duplicates?   why (not) ?
 == STEP 7)  TTL -- Time To Live
 Insert data with TTL
     INSERT INTO features(code, name)
-    VALUES(‘simp’, ‘The Simpsons’)
+    VALUES('simp', 'The Simpsons')
     USING TTL 20;
 
 Issue a query immediately
