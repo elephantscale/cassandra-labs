@@ -52,3 +52,14 @@ Q : do you get the earliest time or latest time?
     cqlsh>   SELECT ........ WHERE   time > .....
 
 Q : what happens when you run the query?
+
+
+== STEP 6)  Inspect 'raw data' using 'cassandra-cli' utility
+start cassandra-cli utility
+    $   cassandra-cli
+    cli>    use myflix;
+    cli>    list sensors;
+
+Q :  Can you make sense of the output?
+
+

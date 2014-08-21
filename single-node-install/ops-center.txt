@@ -34,3 +34,24 @@ Click on 'credentials'
 Enter  user-name / password you used to login to the cluster
 Click 'install'
 
+
+== Troubleshooting ==
+
+Agent install failing?
+we have install ops-center manually
+Follow these instructions:
+
+1)   curl -O http://rpm.datastax.com/community/noarch/opscenter-4.0.1-1.noarch.rpm
+
+2) remove existing opscenter
+  sudo yum remove opscenter
+
+3)  install the downloaded ops center
+sudo yum install opscenter-4.0.1-1.noarch.rpm
+
+4)  sudo vi /etc/opscenter/opscenterd.conf
+change interface = 127.0.0.1 to interface = 0.0.0.0
+
+5) sudo service opscenterd start
+
+6) go to the Ops center UI  and install the agent

@@ -122,3 +122,19 @@ Q5 : Find the best / worst rating for a movie
     cli>   list ratings_by_features;
 
 Q : how is c* storing the data?
+
+
+== BONUS Lab 1)  rating distribution
+for each movie, find out how ratings are distributed.
+    e.g.      rating 1 : given by 10 users
+                rating 2 : given by 20 users
+                ..etc
+interesting reads:
+    - https://www.cs.duke.edu/courses/spring09/cps296.3/lectures/12-colfil-multiscale.pdf
+
+
+== BONUS Lab 2) global rating distribution
+Find out how many movies have a particular rating
+e.g.        70 movies have rating 1
+              100 movies have rating 2
+               ...etc
