@@ -8,3 +8,6 @@ Follow the following steps:
     alter.txt : alter table
     update.txt : updates entries
     delete.txt : deletes records
+
+Dropped all data?  Use the following to get the data back..
+    $   cqlsh   -f features.cql

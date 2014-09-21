@@ -1,3 +1,10 @@
+CREATE KEYSPACE    IF NOT EXISTS   myflix
+        WITH REPLICATION = {
+            'class' : 'SimpleStrategy',
+            'replication_factor' : 1
+            };
+
+
 use myflix;
 
 CREATE TABLE features (
