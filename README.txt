@@ -11,7 +11,8 @@ Lab order
     java-driver
     single-node-install
     debug
-    music  (final lab)
+    gmail  (bonus lab)
+    music  (bonus lab)
 
 Usage:
 --
@@ -29,4 +30,4 @@ Verify Cassandra is running by
 
 
 For install lab, spin up instances of CLEAN centos VMs
-AMI : 
+AMI :

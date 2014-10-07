@@ -23,7 +23,8 @@ save and exit
 
 
 == STEP 3) install cassandra
-    $ sudo yum  install dsc20
+    $   sudo yum install dsc21
+    $   sudo yum install cassandra21-tools
 
 
 == STEP 4)  Inspect cassandra configuration
