@@ -35,5 +35,9 @@ After modifying the file run the script to generate new set of data.
 
 
 == STEP 3)
-delete all data in 'sensors' table (hint : drop)
+delete all data in 'sensors' table (hint : truncate)
 re-import new data
+
+
+== BONUS LAB) generate more data
+Edit the generate-sensor-data.py and generate more data, say 100,000.  Import the data in Cassandra and see how fast / slow the queries run
