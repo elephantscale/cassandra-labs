@@ -46,3 +46,14 @@ Also verify data from cqlsh
     $  cqlsh
     cqlsh>   select  * from users;
     cqlsh>   exit;
+
+
+== BONUS LAB)  Insert a bunch of data
+try to insert about 100k users.
+Measure how much time it taking.
+Also measure the time taken for connection
+
+Hint : to measure time spent..
+    long t1 = System.currentTimeMillis()
+    .... code we want to measure ...
+    long t2  = System.currentTimeMillis()

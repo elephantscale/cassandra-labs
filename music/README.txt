@@ -19,7 +19,7 @@ A song can be in mulitple playlists.
 Discuss design decisions.
 
 
-== STEP 2) create a keyspace music (similar to myflix)
+== STEP 2) create a keyspace 'music' (similar to myflix)
 
 
 == STEP 3) create tables for all models
