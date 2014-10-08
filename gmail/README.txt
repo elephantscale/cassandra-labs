@@ -32,13 +32,16 @@ Create a file called 'emails.cql' with sample data like this  :
     INSERT INTO emails(email_id, subject, from , to , content)
     VALUES ('u1e1', hello 1', 'u1@gmail.com',  'u2@gmail.com',  'hi there' ) ;
 
-    -- this email is a reply to previous email 'e1'
-    -- note ref_id
+following email is a reply to previous email 'e1'note ref_id
+
     INSERT INTO emails(email_id, subject, from , to , content)
     VALUES ('u2e1', hello 1', 'u2@gmail.com',  'u1@gmail.com',  'hi there' , 'u1e1') ;
 
+Tip for setting email ids:
+for emails from user u1, set ids as  'u1e1'  ,  'u1e2' ...
 
 Create a few more entries to reflect the following relationship
+
     U1 sent  email to U2,  U3, and U4
     U2 and U3 replied to U1's email
     U3 sent an email to U4
