@@ -9,7 +9,8 @@ in tar install cqlsh can be found : /path/to/cassandra/install/bin/cqlsh
 
     cqlsh>   describe cluster;
 
-    cqlsh>    CREATE KEYSPACE test
+    cqlsh>
+          CREATE KEYSPACE test
               WITH REPLICATION = {
               'class' : 'SimpleStrategy',
               'replication_factor' : 1
@@ -17,7 +18,8 @@ in tar install cqlsh can be found : /path/to/cassandra/install/bin/cqlsh
 
     cqlsh>  use test;
 
-    cqlsh>  CREATE TABLE users (
+    cqlsh>
+          CREATE TABLE users (
                 userid  text,
                 name  text,
                 PRIMARY KEY (userid)
@@ -40,7 +42,7 @@ We will use 'cassandra-stress' tool
 in tar installs cassandra-stress will be in :
     /path/to/cassandra/install/tools/bin/cassandra-stress
 
-   $   cassandra-stress  -h
+   $   cassandra-stress
 will print out help
 
 Before running the stress test, open another terminal to the node.
@@ -49,8 +51,9 @@ Run 'atop' command on this terminal
 if atop is not installed, do
     $ sudo yum install -y atop
 
-now lets run the stress
-   $   cassandra-stress  -t 8
+now lets run a write test
+   $   cassandra-stress  write
+   (older versions 'cassandra-stress  -t 8 ')
 
 Look at atop output (You may want to make atop terminal window wider)
     which component (cpu, mem, disk) is busy?

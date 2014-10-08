@@ -34,14 +34,17 @@ Choose 'manage existing cluster'
 enter 'localhost'  as hostname
 
 
+== STEP 4)
+Once opscenter is functional, re-run benchmark from 'post-install.txt'.
+Observe metrics on ops-center
 
 == Troubleshooting ==
 
 Agent install failing?
-we have install ops-center manually
+we have to install ops-center manually
 Follow these instructions:
 
-== step 4)  install 'agents'in ops-center webui  (top, center)
+1) install 'agents'in ops-center webui  (top, center)
 it will say '0 agents connected'click on 'fix'
 Click on 'credentials'
 Enter  user-name / password you used to login to the cluster

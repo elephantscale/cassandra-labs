@@ -27,12 +27,19 @@ Any noticeable difference?
 Let's use the local drives for C*
     - stop C*
         $  sudo service cassandra stop
+
     - move cassandra directories (data_file_directories,  commitlog_directory) from EBS storage to ephemeral storage.
-    - update storage directory location in the C* config file :
-            /etc/cassandra/conf/cassandra.yaml
+
+           $  sudo mv /var/lib/cassandra  /media/ephemeral0/
+
+           # create a symlink so  we don't need to change C* config
+           $  sudo ln -s /media/ephemeral0/cassandra  /var/lib/cassandra
+
     - restart C*
         $  sudo service cassandra start
+
     - verify C* is running
+
     - do benchmarks (cassandra-stress tool) and compare
 
 

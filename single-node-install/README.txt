@@ -11,7 +11,8 @@ you can install cassandra one of two ways
     - or tar file based install (follow tar-install.txt)
 
 
-== STEP 3) follow file : post-install.txt
+== STEP 3)
+follow file : post-install.txt
 
 
 == STEP 4)  install ops-center
@@ -19,3 +20,4 @@ follow ops-center.txt
 
 
 == STEP 5) Optimizing C*
+follow : ssd.txt
