@@ -2,11 +2,13 @@ Lab : Creating MyFlix application
 
 == STEP 1)  Enter cqlsh
     $   cqlsh
+    cqlsh > use myflix;
 
 
 == STEP 2)  Alter table
 Alter the features table to add 'studio' column (text)
-    cqlsh>    ALTER TABLE features  ADD studio text;
+    cqlsh>
+      ALTER TABLE features  ADD studio ???;  // TODO : fill in the data type
 
 Verify the table structure
     cqlsh>    DESCRIBE TABLE features;

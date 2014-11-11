@@ -2,6 +2,7 @@ Lab : Creating MyFlix application
 
 == STEP 1)  Enter cqlsh
     $   cqlsh
+    cqlsh>   use myflix;
 
 
 == STEP 2)  If you haven't done so, alter table and add a studio column
@@ -44,3 +45,7 @@ verify data
 
 verify data
     cqlsh >    select * from features;
+
+
+Q : What is the difference between  UPDATE vs INSERT ?
+        :-)

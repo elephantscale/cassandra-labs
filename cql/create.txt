@@ -1,5 +1,8 @@
 Lab : Creating MyFlix application
 
+CQL documentation :
+http://www.datastax.com/documentation/cql/3.0/cql/aboutCQL.html
+
 
 == STEP 1)  Invoke cqlsh
     $  cqlsh
@@ -26,13 +29,15 @@ First use keyspace 'myflix'
     cqlsh>
         use myflix;
 
+        // TODO : replace '???' with the correct types / values
+        // consult CQL documentation link at the top
     cqlsh>
         CREATE TABLE features (
-            code text,
-            name text,
-            type text,
-            release_date timestamp,
-            PRIMARY KEY(code)
+            code ???,  // string type
+            name ???,  // string
+            type ???,  // string
+            release_date ???,  // date
+            PRIMARY KEY(???)
         );
 
 

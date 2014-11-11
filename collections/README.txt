@@ -1,4 +1,4 @@
-Collections
+Collections  (run time : 45 min)
 ===========
 
 CQL Collections documentation :
@@ -71,11 +71,18 @@ http://www.datastax.com/documentation/cql/3.0/cql/cql_using/use_collections_c.ht
   Modify the users table to add a new field 'locations' with an appropriate type
 
   Insert the following location data:
-    Neal's coffee @ 2014-10-01-17:00
-    Echo Park @ 2014-10-01-16:00
+    Neal's coffee @ 2014-10-01 17:00
+    Echo Park @ 2014-10-01 18:00    ( 1 hr later)
 
   Can we keep the latest location first? (for faster queries?)
 
   What are the limitations of this data type?
 
+
+== STEP 6)  Check the documentation
+  Q : Are there size limitations for collections?
+
+  Q: Can you index collections?  which types
+
+  Q : what type of queries are supported for collections?
 
