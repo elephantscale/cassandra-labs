@@ -1,4 +1,4 @@
-Lab : 04-myflix
+Lab : myflix
 -----
 Objective :
     - Design myflix tables

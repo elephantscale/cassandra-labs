@@ -26,7 +26,7 @@ you should see the prompt
             VALUES ('loui1', 'Live from Beacon Theater', 'Live Comedy', '2011-02-10');
 
 
-== STEP 5)   Inspect the table
+== STEP 3)   Inspect the table
     cqlsh>     select * from features;
 
 Q : Is the output sorted in anyway?
@@ -35,17 +35,18 @@ Q : Is the output sorted in anyway?
 Q : Is the output sorted by primary key (code) ? why (not) ?
 
 
-== STEP 6)  Insert the sample data again (using step 4)
+== STEP 4)  Insert the sample data again (using step 4)
 Inspect the table
     cqlsh>     select * from features;
 Q: Do you see any duplicates?   why (not) ?
 
 
-== STEP 7)  TTL -- Time To Live
+== STEP 5)  TTL -- Time To Live
 Insert data with TTL
-    INSERT INTO features(code, name)
-    VALUES('simp', 'The Simpsons')
-    USING TTL 20;
+    cqlsh>
+        INSERT INTO features(code, name)
+        VALUES('simp', 'The Simpsons')
+        USING TTL 20;
 
 Issue a query immediately
     select * from features;
