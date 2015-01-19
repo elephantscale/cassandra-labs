@@ -26,7 +26,7 @@ To login to cluster
     $   ssh -i  cassandra-labs2.pem   ec2-user@host_ip_address
 
 Verify Cassandra is running by
-    $   nodetools  status
+    $   nodetool  status
 
 
 For install lab, spin up instances of CLEAN centos VMs
