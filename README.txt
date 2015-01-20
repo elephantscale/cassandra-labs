@@ -4,6 +4,7 @@ Lab order
 ------
     intro
     cql
+    collections
     composite-keys
     time-series
     counter
