@@ -33,10 +33,10 @@ First use keyspace 'myflix'
         // consult CQL documentation link at the top
     cqlsh>
         CREATE TABLE features (
-            code ???,  // string type
+            code ???,  // string, what is the CQL type?
             name ???,  // string
             type ???,  // string
-            release_date ???,  // date
+            release_date ???,  // date,  what is the CQL type?
             PRIMARY KEY(???)
         );
 
