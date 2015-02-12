@@ -1,0 +1,47 @@
+Composite Keys 2
+-------
+
+In this lab we will add state to the partition key
+
+== STEP 1)  launch csqlsh
+    $ csqlsh
+
+
+== STEP 2)  Define cities2 table
+    cqlsh>
+
+        use myflix;   // select keyspace
+
+        CREATE TABLE cities2 (
+                country text,
+                state text,
+                city text,
+                population int,
+                PRIMARY KEY ((country,state), city)
+         );
+
+== STEP 3) Insert some sample data
+
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('USA', 'FL', 'Melbourne', 10);
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('Australia', 'Vic', 'Melbourne', 20);
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('Australia', 'NSW', 'Sydney', 30);
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('Ireland', 'X', 'Sydney', 30);
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('Columbia', 'Y', 'San Jose', 40);
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('USA', 'CA', 'San Jose', 40);
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('USA', 'CA', 'San Francisco', 40);
+        INSERT INTO cities2 (country, state, city, population)  VALUES ('USA', 'NV', 'Las Vegas', 40);
+
+
+== STEP 4) Query the data and inspect the partitions / layout
+    select * from cities2;
+
+
+== STEP 5) Try these queries
+
+  select * from cities2 where country = 'USA' ;
+
+  select * from cities2 where state = 'CA';
+
+  select * from cities2 where country = 'USA'  and state = 'CA';
+
+  select * from cities2 where city = 'Melbourne'

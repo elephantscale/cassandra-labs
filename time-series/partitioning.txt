@@ -27,6 +27,7 @@ Query table and look at the sorting order
 
 == STEP 2) generate data
 Modify 'generate-sensor-data.py' to generate data for new table
+Complete TODO 3
 Hint 1 : change the table name to 'sensors2' (line 7)
 Hint 2 : Also increase the amount of data generated, 'entries' (line 4)
 Hint 3 : Save data to new table, 'logline' (line 38)

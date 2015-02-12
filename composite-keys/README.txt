@@ -5,15 +5,16 @@ Lab : composite keys
 
 
 == STEP 2)  Define cities table
-    cqlsh>  use myflix;   // select keyspace
-
     cqlsh>
-            CREATE TABLE cities (
-                    country text,
-                    city text,
-                    population int,
-                    PRIMARY KEY (country, city)
-             );
+
+        use myflix;   // select keyspace
+
+        CREATE TABLE cities (
+                country text,
+                city text,
+                population int,
+                PRIMARY KEY (country, city)
+         );
 
 
 == STEP 3)  Insert some sample data
@@ -44,3 +45,6 @@ Try 'ALLOW FILTERING'
 
 == STEP 6)  find all cities with population = 20
 what is the query result?  why?
+
+
+== BONUS Lab ) refer cities2.txt

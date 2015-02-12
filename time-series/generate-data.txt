@@ -26,18 +26,33 @@ use cqlsh to inspect the table
 == STEP 2)
 Update the 'generate-sensor-data.py' to generate 'co_level' data
 Generate co_level as a float between 0.1  to 0.7
+Complete TODO 1 and TODO 2
+
 Hint 1 : look  at how temperature value is generated
 Include co_level into the output
 Hint 2 : Look around line 44 :
     logline = "INSERT INTO....
 
 After modifying the file run the script to generate new set of data.
+  $   python generate-sensor-data.py
 
 
 == STEP 3)
 delete all data in 'sensors' table (hint : truncate)
 re-import new data
+    $   cqlsh   -f sensor.data
 
 
 == BONUS LAB) generate more data
 Edit the generate-sensor-data.py and generate more data, say 100,000.  Import the data in Cassandra and see how fast / slow the queries run
+
+How long does it take to import 100,000 entries?
+Use  time command
+  $    time   cqlsh   -f sensor.data
+
+While the import is happening,  open another terminal and run atop command.  And inspect the output  (look at CPU usage and disk usage)
+    $  atop
+
+(if atop is not installed, install it by doing...
+    $    sudo yum install -y  atop
+)
