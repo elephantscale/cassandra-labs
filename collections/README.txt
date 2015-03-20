@@ -13,6 +13,7 @@ http://www.datastax.com/documentation/cql/3.0/cql/cql_using/use_collections_c.ht
       uname ... primary key
 
   Add a user named 'tim'
+    INSERT INTO users (uname) VALUES (???);
 
 
 == STEP 3)

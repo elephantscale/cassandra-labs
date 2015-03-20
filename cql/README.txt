@@ -1,6 +1,8 @@
 My Flix application
 ------
 
+CQL Docs : http://www.datastax.com/documentation/cql/3.1/cql/cql_intro_c.html
+
 Follow the following steps:
     create.txt :  creates keyspace and features table
     insert.txt : insert sample records
@@ -11,3 +13,4 @@ Follow the following steps:
 
 Dropped all data?  Use the following to get the data back..
     $   cqlsh   -f features.cql
+
