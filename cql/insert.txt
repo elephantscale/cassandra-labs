@@ -35,7 +35,7 @@ Q : Is the output sorted in anyway?
 Q : Is the output sorted by primary key (code) ? why (not) ?
 
 
-== STEP 4)  Insert the sample data again (using step 4)
+== STEP 4)  Insert the sample data again (using step 2)
 Inspect the table
     cqlsh>     select * from features;
 Q: Do you see any duplicates?   why (not) ?
