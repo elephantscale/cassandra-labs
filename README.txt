@@ -1,5 +1,10 @@
 Cassandra Labs
 --------------
+
+To zip up labs without .git folder
+        $   git archive --format=zip HEAD -o cassandra-labs.zip
+
+----
 Lab order
 ------
     intro
