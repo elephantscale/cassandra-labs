@@ -11,8 +11,10 @@ public class FirstTest {
     private static final Logger logger = LoggerFactory.getLogger(FirstTest.class);
 
     @Test
-    public void testConnect() {
+    public void testConnect() throws Exception {
         logger.info("testConnect");
+        String args[] = { "myflix" };
+        TestConnection.main(args);
         assertTrue(true);
     }
 }
