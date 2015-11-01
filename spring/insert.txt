@@ -1,0 +1,59 @@
+Inserting data
+----
+
+
+== STEP 1) Create user table if you haven't yet
+    cqlsh>    use myflix;
+    cqlsh>
+            CREATE TABLE users (
+               user_name text,
+               fname text,
+               lname text,
+               emails list<text>,
+               password text,
+               created_date timestamp,
+               PRIMARY KEY (user_name)
+            );
+    cqlsh> exit;
+
+
+== STEP 2)
+    $   cd  cassandra-labs/java-driver
+
+edit the file : src/main/java/com/es/cassandra/Insert.java
+    $   vim src/main/java/com/es/cassandra/Insert.java
+fix the TODO items
+Use the API documentation for reference
+
+
+== STEP 3)  Compile the code
+    $   mvn  clean package
+This will create 'target' directory and jar files underneath
+
+Examine 'target' directory
+    $   find target
+
+target/java-driver-1.0.0.jar : is our compiled code
+target/dependency-jars  : is 3rd party jars we need to run our code
+
+
+== STEP 4) Run the code
+    $  java -cp target/java-driver-1.0.0.jar:target/dependency-jars/*   com.es.cassandra.Insert
+
+Examine the console output
+
+Also verify data from cqlsh
+    $  cqlsh
+    cqlsh>   select  * from users;
+    cqlsh>   exit;
+
+
+== BONUS LAB)  Insert a bunch of data
+try to insert about 100k users.
+Measure how much time it taking.
+Also measure the time taken for connection
+
+Hint : to measure time spent..
+    long t1 = System.currentTimeMillis()
+    .... code we want to measure ...
+    long t2  = System.currentTimeMillis()
