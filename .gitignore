@@ -10,3 +10,6 @@ generated/
 .classpath
 .project
 *.pyc
+.idea/
+*.iml
+
