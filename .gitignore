@@ -1,5 +1,6 @@
 *.swp
 target/
+logs/
 generated/
 *.jar
 .DS_Store
