@@ -19,7 +19,7 @@ CREATE TABLE users (
         );
 
 INSERT INTO users (id, address, name) values (1, 'England', 'John Donne');
-INSERT INTO users (id, address, name) values (2, 'Michel', 'Montagne');
+INSERT INTO users (id, address, name) values (2, 'Michel', 'Montaigne');
 INSERT INTO users (id, address, name) values (3, 'Bill', 'Shakespeare');
 
 ==> STEP 2
