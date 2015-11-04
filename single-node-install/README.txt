@@ -3,6 +3,7 @@ Lab : Single Node Install of Cassandra
 
 == STEP 1)
 Login to the node (instructor will provide details)
+Instructor: use es-clean-centos-vm-v6 image on m3.medium
 
 
 == STEP 2)
