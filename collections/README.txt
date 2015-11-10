@@ -17,7 +17,7 @@ http://www.datastax.com/documentation/cql/3.0/cql/cql_using/use_collections_c.ht
 
 
 == STEP 3)
-  We need to store multiple emails for user.  What data type can be used?
+  We need to store multiple emails for user.  What collection type can be used?
 
   Modify the users table to add a new field 'emails'
     >  ALTER TABLE users  ADD emails ????;
