@@ -4,14 +4,14 @@ import org.springframework.data.cassandra.mapping.PrimaryKey;
 import org.springframework.data.cassandra.mapping.Table;
 
 @Table
-public class User {
+public class Poet {
 	@PrimaryKey
 	private int id;
 
 	private String address;
 	private String name;
 
-	public User(int id, String address, String name) {
+	public Poet(int id, String address, String name) {
 		this.id = id;
 		this.address = address;
 		this.name = name;
@@ -31,7 +31,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", address=" + address + ", name=" + name
+		return "Poet [id=" + id + ", address=" + address + ", name=" + name
 				+ "]";
 	}
 }

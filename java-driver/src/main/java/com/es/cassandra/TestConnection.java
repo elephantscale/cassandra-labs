@@ -13,13 +13,14 @@ public class TestConnection {
     System.out.println("connected to " + cluster.getClusterName());
 
     // TODO : create a session by connecting to cluster
-    // Session  session = cluster.connect ("keyspace_name");
+    Session  session = cluster.connect ("test");
+
 
     // TODO : print out some session details
-    // System.out.println("session initialized to " + session.getLoggedKeyspace());
+   System.out.println("session initialized to " + session.getLoggedKeyspace());
 
     // TODO : close the session
-    // session.close();
+    session.close();
 
     cluster.close();
 

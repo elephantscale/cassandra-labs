@@ -9,7 +9,8 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 import com.datastax.driver.core.querybuilder.Select;
-import com.devjavasource.cassandra.dto.User;
+
+import com.devjavasource.cassandra.dto.Poet;
 
 public class App {
 	private static Cluster cluster;
@@ -21,24 +22,24 @@ public class App {
 
 			cluster = Cluster.builder().addContactPoint("127.0.0.1").build();
 
-			session = cluster.connect("devjavasource");
+			session = cluster.connect("myflix");
 
 			CassandraOperations cassandraOps = new CassandraTemplate(session);
 
 			final String[] columns = new String[] { "id", "address", "name" };
 
-			Select select = QueryBuilder.select(columns).from("users");
+			Select select = QueryBuilder.select(columns).from("poets");
 			select.where(QueryBuilder.eq("id", 1));
 
-			final List<User> results = cassandraOps.select(select, User.class);
+			final List<Poet> results = cassandraOps.select(select, Poet.class);
 
 			System.out.println("Spring Data Cassandra Example");
 			System.out.println("==============================");
 
-			for (User user : results) {
-				System.out.println("User Id is: " + user.getId());
-				System.out.println("User Address is: " + user.getAddress());
-				System.out.println("User Name is: " + user.getName());
+			for (Poet poets : results) {
+				System.out.println("Poet Id is: " + poets.getId());
+				System.out.println("Poet Address is: " + poets.getAddress());
+				System.out.println("Poet Name is: " + poets.getName());
 			}
 
 		} catch (Exception e) {
