@@ -56,3 +56,6 @@ Q: Do you see 'simpsons' ?
 Wait at least 20 seconds, and inspect the table
     select * from features;
 Q: Do you see 'simpsons' now ?
+
+Q : Think of some applications you can build with this kind of functionality !
+(Any discrete chat apps? :-)

@@ -27,6 +27,8 @@ Use the API documentation for reference
 
 
 == STEP 3)  Compile the code
+Make sure you on are on the project root directory.
+    $   cd ~/cassandra-labs/java-driver
     $   mvn  clean package
 This will create 'target' directory and jar files underneath
 

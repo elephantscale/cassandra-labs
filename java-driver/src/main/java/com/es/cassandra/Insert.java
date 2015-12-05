@@ -10,7 +10,7 @@ public class Insert {
   public static void main(String[] args) throws Exception {
 
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
-    System.out.println("connected to " + cluster.getClusterName());
+    System.out.println("### connected to " + cluster.getClusterName());
 
     Session  session = null;
     // TODO : connect to keyspace
@@ -24,7 +24,7 @@ public class Insert {
       // TODO : construct a cql statement like the follows
       //   insert into users(....) VALUES (......)
       String cql = "INSERT INTO users(.......) VALUES (....)";
-      System.out.println (cql);
+      System.out.println ("### " + cql);
 
       // TODO : execute cql in session
       // session......(cql)

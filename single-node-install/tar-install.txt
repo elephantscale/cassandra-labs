@@ -3,12 +3,20 @@ Lab : Single Node Install of Cassandra
 == STEP 1)  Login to the node
 
 
-== STEP 2)  Download and unpack Datastax community edition
+== STEP 2)  
+Install Cassandra tar file
+    $   cd
+    $   tar xvf software/cassandra/dsc-cassandra-2.1.0-bin.tar.gz
+
+This will install cassandra in ~/dsc-cassandra-2.1.0/
+
+(Optional : To get the latest Cassandra, download and unpack Datastax community edition
     $   wget http://downloads.datastax.com/community/dsc.tar.gz
     $   tar xvf  dsc.tar.gz
 
 This would create a directory 'dsc-cassandra-VERSION'
 This directory would be 'CASSANDRA_INSTALL_DIR'
+)
 
 
 == STEP 3) Setup Cassandra directories

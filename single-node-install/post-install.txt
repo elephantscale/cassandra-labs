@@ -42,7 +42,7 @@ We will use 'cassandra-stress' tool
 in tar installs cassandra-stress will be in :
     /path/to/cassandra/install/tools/bin/cassandra-stress
 
-   $   cassandra-stress
+   $   cassandra-stress  help
 will print out help
 
 Before running the stress test, open another terminal to the node.

@@ -36,7 +36,7 @@ if __name__ == '__main__':
             logline = "INSERT INTO %s(sensor_id, time, temperature, humidity) VALUES('%s', '%s', %s, %s);" % (table, sensor_id, timestamp, temp, humidity)
 
             ## TODO 2 : including co_level, replace ???
-            #logline = "INSERT INTO %s(sensor_id, time, temperature, humidity, ????) VALUES('%s', '%s', %s, %s, ???);" % (table, sensor_id, timestamp, temp, humidity, ???)
+            #logline = "INSERT INTO %s(sensor_id, time, temperature, humidity, ????) VALUES('%s', '%s', %s, %s, %s);" % (table, sensor_id, timestamp, temp, humidity, ???)
 
             ## TODO 3 :  for partitioning by month (bonus lab)
             #logline = "INSERT INTO %s(sensor_id, time, month, temperature, humidity, co_level) VALUES('%s', '%s', '%s', %s, %s, %s);" % (table, sensor_id, timestamp, month, temp, humidity, co_level)
