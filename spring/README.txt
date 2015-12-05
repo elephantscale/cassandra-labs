@@ -3,24 +3,24 @@ Spring Cassandra Example
 
 ==> STEP1. To prepare for lab, do this
 
-CREATE KEYSPACE    IF NOT EXISTS   devjavasource
+CREATE KEYSPACE    IF NOT EXISTS   myflix
         WITH REPLICATION = {
             'class' : 'SimpleStrategy',
             'replication_factor' : 1
             };
 
-USE devjavasource;
+USE myflix;
 
-CREATE TABLE users (
+CREATE TABLE poets (
             id int,
             address text,
             name text,
             PRIMARY KEY(id)
         );
 
-INSERT INTO users (id, address, name) values (1, 'England', 'John Donne');
-INSERT INTO users (id, address, name) values (2, 'Michel', 'Montaigne');
-INSERT INTO users (id, address, name) values (3, 'Bill', 'Shakespeare');
+INSERT INTO poets (id, address, name) values (1, 'England', 'John Donne');
+INSERT INTO poets (id, address, name) values (2, 'France', 'Michel Montaigne');
+INSERT INTO poets (id, address, name) values (3, 'England', 'Bill Shakespeare');
 
 ==> STEP 2
 
@@ -34,6 +34,4 @@ mvn test
 
 ==> STEP 3
 
-Modify the code to show a different 'user'
-
-Source http://www.devjavasource.com/cassandra/spring-data-cassandra-hello-world-example/
+Modify the code to read information about a different poet
