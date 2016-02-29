@@ -1,0 +1,20 @@
+Troubleshooting
+=====
+** Troubleshooting:
+If Cassandra isn't starting up, check the logs  in '/var/log/cassandra'  directory
+
+If there is an error about Java class mismatches or Java 7, please do the following fix.
+    $ sudo vi /etc/cassandra/conf/cassandra-env.sh
+go to around line number 90, just after the line saying '# determine JVM'
+add these two lines
+export JAVA_HOME="/usr/java/latest"
+export JAVA="$JAVA_HOME/bin/java"
+
+After that the file should look like this...
+    # Determine the sort of JVM we'll be running
+    export JAVA_HOME="/usr/java/latest"
+    export JAVA="$JAVA_HOME/bin/java"
+    java_ver_output=`"${JAVA:-java}" -version 2>&1`
+save and exit
+then start Cassandra again
+

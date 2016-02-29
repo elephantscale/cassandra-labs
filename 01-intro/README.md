@@ -1,0 +1,71 @@
+<link rel='stylesheet' href='../assets/css/main.css'/>
+
+[<< back to main index](../README.md) 
+
+Lab 01 : CQLSH Introduction
+=========================
+
+### Overview
+First look at Cqlsh
+
+### Depends On 
+None
+
+### Run time
+10 mins
+
+
+## STEP 1:  Invoke cqlsh
+```
+    $  cqlsh
+```
+you should see the prompt
+```console
+    cqlsh>
+```
+
+
+## STEP 2: Tips for CSQL : Use Help
+To get help use `help`  or `?`
+```
+    cqlsh>   ?
+    cqlsh>  help
+```
+
+and use help for keyword
+```
+    cqlsh>   help <keyword>;
+    cqlsh>   help  describe;
+```
+
+## STEP 3: Make use of 'tab completion' to save some typing.
+Type a command and hit 'Tab' key.  Hit Tab again to see all possible matches
+Try this:
+```
+    cqlsh>  descr<Tab>   <Tab> again
+
+    cqlsh>  describe cluster;
+```
+
+output might look like:
+```console
+        Cluster: Test Cluster
+        Partitioner: Murmur3Partitioner
+        Snitch: SimpleSnitch
+```
+
+## STEP 4:  Inspect Existing Keyspaces
+Hint : use `describe` command  (`help describe`)   
+What keyspaces do you see?
+
+
+## STEP 5:  Get Details of  keyspace 'system'
+Hint : use `describe` command.  
+Inspect the output.
+
+
+## STEP 6:  Look at Keyspaces
+```
+    cqlsh> SELECT * from system_schema.keyspaces;
+```
+
