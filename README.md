@@ -38,7 +38,9 @@ Labs
 ----
 1. [CQLSH](01-intro/README.md)
 
-2. [CQL Intro](02-cql/README.md)
+2. CQL Intro
+    - [2  CQL](02-cql/README.md)
+    - [2.5 Indexing](02-cql/index.md)
 
 3. [Collections](03-collections/README.md)
 

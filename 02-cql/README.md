@@ -16,7 +16,7 @@ None
 
 
 ## STEP 1 : CQL Reference
-[CQL Reference Docs](http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlReferenceTOC.html)
+[CQL Reference Docs](http://docs.datastax.com/en//cql/latest/cql/cqlIntro.html)
 
 ## STEP 2 : Create A Table
 Follow [create.md](2.1-create.md)
