@@ -30,7 +30,7 @@ if __name__ == '__main__':
             video_id = uuid.uuid1()
             user_name = "user-%s" % random.randint(1,100)
             video_name = "video %s" % x
-            location = {'us' : 'http://right.here'}
+            location = 'http://cdn.com/video/%s' % video_id
             upload_time = random_timestamp(start_date, end_date)
 
             num_tags = random.randint(1,3)

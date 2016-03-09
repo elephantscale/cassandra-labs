@@ -1,5 +1,8 @@
 package com.es.cassandra;
 
+import java.text.NumberFormat;
+import java.util.logging.SimpleFormatter;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 
@@ -7,31 +10,42 @@ import com.datastax.driver.core.Session;
 
 public class Insert {
 
-  public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-    Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
-    System.out.println("### connected to " + cluster.getClusterName());
+	Cluster cluster = Cluster.builder().addContactPoint("localhost")
+		.build();
+	System.out.println("### connected to " + cluster.getClusterName());
 
-    Session  session = null;
-    // TODO : connect to keyspace
-    // session = cluster. ......
+	Session session = cluster.connect("myflix");
 
-    for (int i = 1; i < 10; i++)
-    {
-      String user_name = "user-" + i;
-      String emails = "[" + "'user-" + i + "@email.com'" + "]";
+	long t1 = System.currentTimeMillis();
+	int maxUsers = 10; // change this to adjust # of records inserted
+	for (int i = 1; i < maxUsers; i++) {
+	    String user_name = "user-" + i;
+	    String fname = "Joe " + i;
+	    String lname = "Smith " + i;
+	    String emails = "[" + "'user-" + i + "@email.com'" + "]";
 
-      // TODO : construct a cql statement like the follows
-      //   insert into users(....) VALUES (......)
-      String cql = "INSERT INTO users(.......) VALUES (....)";
-      System.out.println ("### " + cql);
+	    // construct CQL
+	    String cql = "".format(
+		    "INSERT INTO users(user_name, fname, lname, emails) "
+			    + "VALUES ('%s', '%s', '%s',  %s);", user_name,
+		    fname, lname, emails);
 
-      // TODO : execute cql in session
-      // session......(cql)
+	    // debug print, turn off for benchmarking :-)
+	    System.out.println("### " + cql);
+
+	    // TODO : execute cql in session
+	    // session......(cql)
+	}
+	long t2 = System.currentTimeMillis();
+
+	System.out.println("".format(
+		"### Inserted %d users in %d milli secs. (%f writes / sec)",
+		maxUsers, (t2 - t1), maxUsers * 1000.0 / (t2 - t1)));
+
+	session.close();
+	cluster.close();
     }
-
-    session.close();
-    cluster.close();
-  }
 
 }

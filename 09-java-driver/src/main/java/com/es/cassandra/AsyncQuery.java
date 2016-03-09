@@ -9,32 +9,38 @@ import com.datastax.driver.core.Session;
 
 public class AsyncQuery {
 
-  public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-    Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
-    System.out.println("connected to " + cluster.getClusterName());
+	Cluster cluster = Cluster.builder().addContactPoint("localhost")
+		.build();
+	System.out.println("connected to " + cluster.getClusterName());
 
-    Session  session = null;
-    // TODO : connect to keyspace
-    // session = cluster. ......
+	Session session = cluster.connect("myflix");
 
-    // Async call is non-blocking
-    // TODO : construct the cql for selecting all entries from USERS table
-    ResultSetFuture results = session.executeAsync("..cql query...");
+	// Async call is non-blocking
+	// TODO : construct the cql for selecting all entries from USERS table
+	long t1 = System.currentTimeMillis();
+	ResultSetFuture results = session.executeAsync("..cql query here...");
+	long t2 = System.currentTimeMillis();
 
-    // TODO : iterate over results , check JavaDoc
-    // Hint : getUninterruptibly()
+	int counter = 0;
+	long t3 = System.currentTimeMillis();
+	for (Row row : results.getUninterruptibly()) // this is blocking call
+	{
+	    counter++;
+	    System.out.println("\n### " + counter++);
+	    System.out.println("### user_name : " + row.getString("user_name"));
+	}
+	long t4 = System.currentTimeMillis();
 
+	System.out.println("### async query took : " + (t2 - t1) + "  ms");
+	System.out.println("".format(
+		"### Iterated through %d users in %d milli secs. (%f reads / sec)",
+		counter, (t4 - t3), counter * 1000.0 / (t4 - t3)));
 
-    session.close();
-    cluster.close();
+	session.close();
+	cluster.close();
 
-    // TODO : calculate how much time it took to execute the async  query
-    // HINT :
-    //  long t1 = System.currentTimeMillis();
-    //  ... query ....
-    //  long t2 =  System.currentTimeMillis();
-
-  }
+    }
 
 }
