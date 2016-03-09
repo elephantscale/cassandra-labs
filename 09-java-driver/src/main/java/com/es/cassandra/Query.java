@@ -27,7 +27,7 @@ public class Query {
 		.build();
 	System.out.println("connected to " + cluster.getClusterName());
 
-	Session session = cluster.connect("myflix");
+	Session session = cluster.connect("???");
 
 	// TODO : construct the cql for selecting all entries from USERS table
 	long t1 = System.currentTimeMillis();
@@ -45,7 +45,7 @@ public class Query {
 	}
 	long t2 = System.currentTimeMillis();
 
-	System.out.println("".format(
+	System.out.println(String.format(
 		"### Queried %d users in %d milli secs. (%f reads / sec)",
 		numRows, (t2 - t1), numRows * 1000.0 / (t2 - t1)));
 

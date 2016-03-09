@@ -16,7 +16,7 @@ public class Insert {
 		.build();
 	System.out.println("### connected to " + cluster.getClusterName());
 
-	Session session = cluster.connect("myflix");
+	Session session = cluster.connect("???");
 
 	long t1 = System.currentTimeMillis();
 	int maxUsers = 10; // change this to adjust # of records inserted
@@ -27,7 +27,7 @@ public class Insert {
 	    String emails = "[" + "'user-" + i + "@email.com'" + "]";
 
 	    // construct CQL
-	    String cql = "".format(
+	    String cql = String.format(
 		    "INSERT INTO users(user_name, fname, lname, emails) "
 			    + "VALUES ('%s', '%s', '%s',  %s);", user_name,
 		    fname, lname, emails);

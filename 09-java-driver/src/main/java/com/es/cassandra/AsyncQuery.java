@@ -15,7 +15,7 @@ public class AsyncQuery {
 		.build();
 	System.out.println("connected to " + cluster.getClusterName());
 
-	Session session = cluster.connect("myflix");
+	Session session = cluster.connect("???");
 
 	// Async call is non-blocking
 	// TODO : construct the cql for selecting all entries from USERS table
@@ -34,7 +34,7 @@ public class AsyncQuery {
 	long t4 = System.currentTimeMillis();
 
 	System.out.println("### async query took : " + (t2 - t1) + "  ms");
-	System.out.println("".format(
+	System.out.println(String.format(
 		"### Iterated through %d users in %d milli secs. (%f reads / sec)",
 		counter, (t4 - t3), counter * 1000.0 / (t4 - t3)));
 
