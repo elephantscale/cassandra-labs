@@ -22,9 +22,7 @@ None
 ## STEP 2:  Restore 'features' table
 If you had dropped `features` table restore it as follows.
 ```
-    $   cd ~/cassandra-labs
-
-    $   cqlsh -f features.cql
+    $   cqlsh -f  ~/cassandra-labs/02-cql/features.cql
 ```
 
 
