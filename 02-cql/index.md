@@ -56,7 +56,7 @@ Enter the following in cqlsh
 ##  STEP 6: Try The Query Again
 ```
     cqlsh>
-        select * from features where type = 'TV Show’;
+        select * from features where type = 'TV Show';
 ```
 
 Your result may look like the following:
