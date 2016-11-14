@@ -70,26 +70,25 @@ Labs
 
 15. Bonus Lab : [Modeling WebEx](15-video-conf/README.md)
 
-
-For Instructor:
 ----------------------------
+
+# For Instructor:
+
 * To zip up labs without .git folder
 ```
    $   git archive --format=zip HEAD -o cassandra-labs.zip
 ```
 
 
-* Use latest of 'cassandra-*' AMI
+* Use latest of `ubuntu-*` AMI
     * m1.medium 
-    * username : ec2-user 
+    * username : ubuntu
     * password : usual 
     * ssh key : cassandra-labs2.pem 
 
-* For install lab use 'linux-clean-*'  AMI
-
 * To login to cluster
 ```
-    $   ssh -i  cassandra-labs2.pem   ec2-user@host_ip_address
+    $   ssh  -l ubuntu   host_ip_address
 ```
 
 * Verify Cassandra is running by
