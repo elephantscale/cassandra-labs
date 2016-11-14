@@ -22,13 +22,13 @@ None
 ## STEP 2:  Restore 'features' table
 If you had dropped `features` table restore it as follows.
 ```
-    $   cqlsh -f  ~/cassandra-labs/02-cql/features.cql
+    $    ~/cassandra/bin/cqlsh  -f  ~/cassandra-labs/02-cql/features.cql
 ```
 
 
 ## STEP 3:  Invoke cqlsh
 ```
-    $  cqlsh
+    $   ~/cassandra/bin/cqlsh
 ```
 
 ##  STEP 4: Try This Query 

@@ -46,7 +46,7 @@ create table emails (
 
 Create the tables by:
 ```
-    $  cqlsh   -f    gmail.cql
+    $   ~/cassandra/bin/cqlsh   -f    gmail.cql
 ```
 
 ## STEP 2: Sample Data : Users
@@ -60,7 +60,7 @@ Create a few more entries for various users.
 Save the file.  
 Import the data into Cassandra.  
 ```
-    $    cqlsh  -f   users.cql
+    $     ~/cassandra/bin/cqlsh  -f   users.cql
 ```
 
 
@@ -91,7 +91,7 @@ Create a few more entries to reflect the following relationship
 
 Save this file (emails.cql) and import the data
 ```
-    $   cqlsh   -f email.cql
+    $    ~/cassandra/bin/cqlsh   -f email.cql
 ```
 
 

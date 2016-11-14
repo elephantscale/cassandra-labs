@@ -19,7 +19,7 @@ None
 Start cqlsh and interact with C*.  
 In tar install cqlsh can be found : /path/to/cassandra/install/bin/cqlsh
 ```
-    $   cqlsh
+    $    ~/cassandra/bin/cqlsh
 
     cqlsh>   
           describe cluster;

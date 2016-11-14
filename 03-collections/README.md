@@ -21,7 +21,7 @@ None
 
 ## STEP 2:  Invoke cqlsh
 ```
-    $  cqlsh
+    $   ~/cassandra/bin/cqlsh
 ```
 
 
