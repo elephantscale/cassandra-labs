@@ -10,42 +10,46 @@ import com.datastax.driver.core.Session;
 
 public class Insert {
 
-    public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception {
 
-	Cluster cluster = Cluster.builder().addContactPoint("localhost")
-		.build();
-	System.out.println("### connected to " + cluster.getClusterName());
+    NumberFormat nf = NumberFormat.getInstance();
 
-	Session session = cluster.connect("???");
+    Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
+    System.out.println("### connected to " + cluster.getClusterName());
 
-	long t1 = System.currentTimeMillis();
-	int maxUsers = 10; // change this to adjust # of records inserted
-	for (int i = 1; i < maxUsers; i++) {
-	    String user_name = "user-" + i;
-	    String fname = "Joe " + i;
-	    String lname = "Smith " + i;
-	    String emails = "[" + "'user-" + i + "@email.com'" + "]";
+    // TODO-1 : connect to keyspace
+    Session session = cluster.connect("???");
 
-	    // construct CQL
-	    String cql = String.format(
-		    "INSERT INTO users(user_name, fname, lname, emails) "
-			    + "VALUES ('%s', '%s', '%s',  %s);", user_name,
-		    fname, lname, emails);
+    long t1 = System.currentTimeMillis();
+    int maxUsers = 10; // change this to adjust # of records inserted
+    for (int i = 1; i < maxUsers; i++) {
+      String user_name = "user-" + i;
+      String fname = "Joe " + i;
+      String lname = "Smith " + i;
+      String emails = "{" + "'user-" + i + "@email.com'" + "}";
 
-	    // debug print, turn off for benchmarking :-)
-	    System.out.println("### " + cql);
+      // construct CQL
+      String cql = String.format(
+          "INSERT INTO users(user_name, fname, lname, emails) "
+              + "VALUES ('%s', '%s', '%s',  %s);",
+          user_name, fname, lname, emails);
 
-	    // TODO : execute cql in session
-	    // session......(cql)
-	}
-	long t2 = System.currentTimeMillis();
+      // debug print, turn off for benchmarking :-)
+      System.out.println("### " + cql);
 
-	System.out.println("".format(
-		"### Inserted %d users in %d milli secs. (%f writes / sec)",
-		maxUsers, (t2 - t1), maxUsers * 1000.0 / (t2 - t1)));
-
-	session.close();
-	cluster.close();
+      // TODO-2 : execute cql in session
+      // session......(cql);
     }
+    long t2 = System.currentTimeMillis();
+
+    System.out.println(
+        "".format("### Inserted %s users in %s milli secs. (%s writes / sec)",
+            nf.format(maxUsers), 
+            nf.format(t2 - t1),
+            nf.format(maxUsers * 1000.0 / (t2 - t1))));
+
+    session.close();
+    cluster.close();
+  }
 
 }

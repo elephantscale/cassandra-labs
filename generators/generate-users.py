@@ -29,7 +29,7 @@ if __name__ == '__main__':
             for y in range(1, num_emails+1):
                 emails.append("'user-%s.%s@email.com'" % (x, y))
 
-            all_emails = "[" + ','.join(emails) + "]"
+            all_emails = "{" + ','.join(emails) + "}"
 
             logline = "INSERT INTO %s(user_name, fname, lname, emails) VALUES('%s', '%s', '%s', %s);" % (table, username, fname, lname, all_emails)
             #print logline

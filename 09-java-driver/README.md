@@ -21,6 +21,9 @@ https://docs.datastax.com/en/latest-java-driver/java-driver/whatsNew2.html
 ### Java API docs :
 http://docs.datastax.com/en/drivers/java/3.0/
 
+### Editing files
+Read [how to edit files](../edit-files.md)
+
 ## Labs
 - [connect](9.1-connect.md)  : connect to cassandra cluster
 - [insert](9.2-insert.md)  : insert data

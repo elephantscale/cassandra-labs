@@ -46,9 +46,14 @@ Labs
 
 3. [Collections](03-collections/README.md)
 
-4. [Composite Keys](04-composite-keys/README.md)
+4. Composite Keys
+    -  [4.1 Composite Keys 1](04-composite-keys/4.1-composite-keys-1.md)
+    -  [4.2 Composite Keys 2](04-composite-keys/4.2-composite-keys-2.md)
 
-5. [Time Series](05-time-series/README.md)
+5. Time Series
+    -  [5.1 time series 1](05-time-series/5.1-time-series-1.md)
+    -  [5.2 time series 2](05-time-series/5.2-generate-data.md)
+    -  [5.3 time series 3](05-time-series/5.3-partitioning.md)
 
 6. [Counters](06-counter/README.md)
 
@@ -62,13 +67,14 @@ Labs
 
 11. [Debug](11-debug/README.md)
 
-12. Bonus Lab : [Modeling GMAIL](12-gmail/README.md)
+12. Bonus Data Modeling Lab : [Modeling GMAIL](12-gmail/README.md)
 
-13. Bonus Lab : [Modeling Spotify](13-music/README.md)
+13. Bonus Data Modeling Lab: [Spotify](13-music/README.md)
 
-14. Bonus Lab : [Spring Access to C*](14-spring/README.md)
+14. Bonus Data Modeling Lab : [WebEx](15-video-conf/README.md)
 
-15. Bonus Lab : [Modeling WebEx](15-video-conf/README.md)
+15. Bonus Lab : [Spring Access to C*](14-spring/README.md)
+
 
 ----------------------------
 

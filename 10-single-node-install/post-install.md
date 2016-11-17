@@ -18,7 +18,8 @@ None
 ----------------------------
 Start cqlsh and interact with C*.  
 In tar install cqlsh can be found : /path/to/cassandra/install/bin/cqlsh
-```
+
+```sql
     $    ~/cassandra/bin/cqlsh
 
     cqlsh>   
@@ -53,26 +54,23 @@ In tar install cqlsh can be found : /path/to/cassandra/install/bin/cqlsh
 We will use `cassandra-stress` tool.  
 In tar installs cassandra-stress will be in : `/path/to/cassandra/install/tools/bin/cassandra-stress`
 
-```
-   $   cassandra-stress  help
+```bash
+   $   ~/cassandra/tools/bin/cassandra-stress  help
 ```
 
 Will print out help.
 
 Before running the stress test, open another terminal to the node.
 Run `atop` command on this terminal
-```
+
+```bash
     $ atop
 ```
 
-If atop is not installed, do
-```
-    $ sudo yum install -y atop
-```
 
 Now lets run a write test
-```
-   $   cassandra-stress  write
+```bash
+   $   ~/cassandra/tools/bin/cassandra-stress  write
    (older versions 'cassandra-stress  -t 8 ')
 ```
 

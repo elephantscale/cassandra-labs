@@ -2,8 +2,7 @@
 
 [<< back to main index](../README.md) 
 
-Lab 07 : Modeling MyFlix on C*
-====================
+# Lab 08 : Modeling MyFlix on C*
 
 ### Overview
 Data modeling MyFlix in C*.
@@ -17,15 +16,17 @@ None
 1 hour
 
 ### Solution
-/labs-private/solutions/cassandra-solutions/myflix-solutions.txt
+/es-training/cassandra/solutions/myflix-solutions.txt
 
-## STEP 1:  'features' Table
+## Step 1:  'features' Table
 Note : If you already have this table defined, you may skip this step.
 Or drop the previous table and re-create it as follows.
 ```
     $    ~/cassandra/bin/cqlsh
     cqlsh>
         use myflix;
+
+        // drop table features; // if you want to start fresh
 
         CREATE TABLE features (
                 code text,
@@ -37,7 +38,7 @@ Or drop the previous table and re-create it as follows.
             );
 ```
 
-## STEP 2: Populate 'features' Table
+## Step 2: Populate 'features' Table
 We are going to generate 'features' data.  
 Script to use :  `generators/generate-features.py`  
 Inspect the python script in `../generators/generate-features.py`  
@@ -72,7 +73,7 @@ Verify the data from cqlsh
         select * from  features limit 10;
 ```
 
-## STEP 3:  Create Indexes For Features Table
+## Step 3:  Create Indexes For Features Table
 We want to find all features by a particular studio, say 'HBO'
 Try this query:
 ```
@@ -80,11 +81,13 @@ Try this query:
         select *  from features where studio = 'HBO';
 ```
 
-This query will fail,  we need to add an index.
+This query will fail,  we need to add an index.  
 syntax :
-```
+```sql
     cqlsh > 
-        create  index   name_of_index  on table(column_name)
+        // create  index   name_of_index  on table(column_name)
+
+        create index idx_studio on features(studio);
 ```
 
 CQL Reference on indexes : http://www.datastax.com/documentation/cql/3.1/cql/cql_reference/create_index_r.html
@@ -92,23 +95,25 @@ CQL Reference on indexes : http://www.datastax.com/documentation/cql/3.1/cql/cql
 Now do the same query again.
 
 Also add an index on `type` column.  
-Query for all features of type=Movie and studio=HBO.   
+Query for all features of `type=Movie and studio=HBO`.   
 What is the result of query execution?  why?
 
 
-## STEP 4: Users Table
+## Step 4: Users Table
 Create a users table with the following attributes
     - user_name  : text  (primary key)
+    - password : text
     - fname : text
     - lname : text
-    - emails : list of text
+    - primary_email : text
+    - emails : Set of text
 
 Use  `../generators/generate-users.py`  script to generate users data.  
 Import the data into users table.   
 Follow similar import procedure as step 2.
 
 
-## STEP 5) 'ratings_by_user' Table
+## Step 5: 'ratings_by_user' Table
 Create `ratings_by_user` table with following attributes
     - user_name : text
     - feature_code : text
@@ -124,7 +129,7 @@ use script `../generators/generate-ratings.py`  to generate some ratings data an
 Follow similar procedure in step (2)
 
 
-## STEP 6: Populating  'ratings_by_feature' Table
+## Step 6: Populating  'ratings_by_feature' Table
 In step-5 the `../generators/generate-ratings.py` script only populated `ratings_by_user` table.  Modify the script to add data for `ratings_by_feature` table.
 
 Hint : look around line 31 in the python script
@@ -133,7 +138,7 @@ After updating the script, run it again and import the data.
 Hint : you may want to clear the data that is already in table `ratings_by_user` before re-importing  (using `truncate` command)
 
 
-## STEP 7: Queries
+## Step 7: Queries
 ```
     Q1 : select * from ratings_by_feature;
         what is the order / clustering order of data?
@@ -148,15 +153,6 @@ Hint : you may want to clear the data that is already in table `ratings_by_user`
     Q5 : Find the best / worst rating for a movie
 ```
 
-## STEP 8: Use 'cassandra-cli' To Inspect Data
-```
-    $   cassandra-cli
-    cli>   use myflix;
-    cli>   list ratings_by_user;
-    cli>   list ratings_by_features;
-```
-
-**=> Q : how is c* storing the data?** 
 
 
 ## BONUS Lab 1:  Rating Distribution
