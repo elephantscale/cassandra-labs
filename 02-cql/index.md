@@ -48,7 +48,7 @@ Enter the following in cqlsh
 
         -- use myflix;
 
-        create index idx_type ON features (type)
+        create index idx_type ON features (type);
 
         describe table features;
 ```
