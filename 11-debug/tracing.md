@@ -1,14 +1,14 @@
 <link rel='stylesheet' href='../assets/css/main.css'/>
 
-[<< back to main index](../README.md) / [Debugging](README.md) 
+[<< back to main index](../README.md) / [Debugging](README.md)
 
 Lab 11.1: C* Tracing
 ====================
 
 ### Overview
-Tracing 
+Tracing
 
-### Depends On 
+### Depends On
 None
 
 ### Run time
@@ -55,3 +55,18 @@ Query with tracing ON.
 ```
 
 Inspect the tracing output.
+
+
+## STEP 3: Find where data is located
+Which node has my data?  
+We will use 'getendpoints' options in nodetool.
+
+Usage:
+```bash
+  $  ~/cassandra/bin/nodetool getendpoints   keyspace  table  primary_key
+```
+
+Try:
+```bash
+  $  ~/cassandra/bin/nodetool getendpoints   myflix  features  'sopr'
+```

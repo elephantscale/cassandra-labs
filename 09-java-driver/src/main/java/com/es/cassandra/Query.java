@@ -34,7 +34,7 @@ public class Query {
 
     // TODO-2 : construct the cql for selecting all entries from USERS table
     long t1 = System.currentTimeMillis();
-    ResultSet resultSet = session.execute("select ..... ");
+    ResultSet resultSet = session.execute("select ???? ");
     int numRows = 0;
     for (Row row : resultSet) {
       numRows++;
@@ -50,7 +50,7 @@ public class Query {
 
     System.out.println(
         String.format("### Queried %s users in %s milli secs. (%s reads / sec)",
-            nf.format(numRows), 
+            nf.format(numRows),
             nf.format(t2 - t1),
             nf.format(numRows * 1000.0 / (t2 - t1))));
 

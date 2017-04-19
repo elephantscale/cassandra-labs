@@ -14,7 +14,7 @@ In order of preference & ease
 ## Option 1 : Using NoIDE
 ### Start Noide
 ```bash
-    $   nohup   ~/run-noide.sh & 
+    $   nohup   ~/run-noide.sh &
 ```
 
 ### Goto port 3000 in browser
@@ -46,5 +46,5 @@ Happy editing!
 
     $   vi file_name_to_edit
     # or
-    $   nanon file_to_edit
+    $   nano file_to_edit
 ```

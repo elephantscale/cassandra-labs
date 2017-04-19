@@ -8,7 +8,7 @@ Lab 2.5 : Indexing
 ### Overview
 Use indexing support in C*
 
-### Depends On 
+### Depends On
 None
 
 ### Run time
@@ -31,7 +31,7 @@ If you had dropped `features` table restore it as follows.
     $   ~/cassandra/bin/cqlsh
 ```
 
-##  STEP 4: Try This Query 
+##  STEP 4: Try This Query
 ```
     cqlsh>
         use myflix;
@@ -68,3 +68,14 @@ code   | name     | release_date             | studio | type
 
 ```
 
+##  STEP 7: Trace the query
+Turn on tracing to see how index queries are executed.
+
+```sql
+  cqlsh>
+      tracing on;
+
+      select * from features where type = 'TV Show';
+```
+
+**=> Inspect the tracing output**
