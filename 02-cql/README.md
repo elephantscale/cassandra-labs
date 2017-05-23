@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='../assets/css/main.css'/>
 
-[<< back to main index](../README.md) 
+[<< back to main index](../README.md)
 
 Lab 02 : CQL Introduction
 =========================
@@ -8,7 +8,7 @@ Lab 02 : CQL Introduction
 ### Overview
 Learning CQL
 
-### Depends On 
+### Depends On
 None
 
 ### Run time
@@ -39,6 +39,5 @@ Follow [delete.md](2.6-delete.md)
 ## Step 8 : Restore Data
 Dropped all data?  Use the following to get the data back..
 ```
-    $    ~/cassandra/bin/cqlsh   -f features.cql
+    $    ~/cassandra/bin/cqlsh   -f   ~/cassandra-labs/02-cql/features.cql
 ```
-

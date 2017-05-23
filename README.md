@@ -19,17 +19,17 @@ If this link does not work, search for markdown-preview-plus in https://chrome.g
 
 * Once installed, go to 'Window --> Extensions' menu of Chrome ;   Find 'Markdown Preview Plus' plugin ;  set 'Allow access to file urls'
 
-* Open any *.md file using Chrome (File --> Open)
+* Open any .md file using Chrome (File --> Open)
 
 
 Editors
 -------
 We recommend using a 'programmer's editor' to view these files. These editors have integrated file browser and allows navigating through files quickly.
-* For Windows : [Sublime](http://www.sublimetext.com/), [NodePad++](http://notepad-plus-plus.org/), [Textpad](http://www.textpad.com/)
+* For Windows : [Atom](https://atom.io), [Sublime](http://www.sublimetext.com/), [NodePad++](http://notepad-plus-plus.org/), [Textpad](http://www.textpad.com/)
 
-* For Mac : [Sublime](http://www.sublimetext.com/),  [TextWrangler](http://www.barebones.com/products/textwrangler/)
+* For Mac : [Atom](https://atom.io), [Sublime](http://www.sublimetext.com/),  [TextWrangler](http://www.barebones.com/products/textwrangler/)
 
-* For Linux : [Sublime](http://www.sublimetext.com/), GEdit, Vim
+* For Linux : [Atom](https://atom.io), [Sublime](http://www.sublimetext.com/), GEdit, Vim
 
 
 
@@ -87,10 +87,10 @@ Labs
 
 
 * Use latest of `ubuntu-*` AMI
-    * m1.medium 
+    * m1.medium
     * username : ubuntu
-    * password : usual 
-    * ssh key : cassandra-labs2.pem 
+    * password : usual
+    * ssh key : cassandra-labs2.pem
 
 * To login to cluster
 ```
@@ -101,5 +101,3 @@ Labs
 ```
     $   nodetool  status
 ```
-
-
