@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='../assets/css/main.css'/>
 
-[<< back to main index](../README.md) 
+[<< back to main index](../README.md)
 
 # Lab 08 : Modeling MyFlix on C*
 
@@ -9,7 +9,7 @@ Data modeling MyFlix in C*.
 - Design myflix tables
 - populate the tables with data
 
-### Depends On 
+### Depends On
 None
 
 ### Run time
@@ -69,8 +69,12 @@ Import the features.data
 Verify the data from cqlsh
 ```
     $   ~/cassandra/bin/cqlsh
-    cqlsh> 
+    cqlsh>
+        use myflix;
         select * from  features limit 10;
+
+        -- or you can use this way
+        select * from  myflix.features limit 10;
 ```
 
 ## Step 3:  Create Indexes For Features Table
@@ -84,7 +88,7 @@ Try this query:
 This query will fail,  we need to add an index.  
 syntax :
 ```sql
-    cqlsh > 
+    cqlsh >
         // create  index   name_of_index  on table(column_name)
 
         create index idx_studio on features(studio);
