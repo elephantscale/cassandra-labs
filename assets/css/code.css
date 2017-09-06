@@ -3,10 +3,7 @@
  */
 /* need to customize these style-rules */
 .hljs {
-  display: block;
   overflow-x: auto;
-  padding: 0.5em;
-  background: #eee; color: black;
 }
 
 .hljs-link,
@@ -81,4 +78,10 @@
 .hljs-selector-id,
 .hljs-selector-class {
   color: #007700;
+}
+.lang-q,
+.lang-question {
+    color: #622569;
+    background-color: #ffd9e9;
+    font-weight: bold;
 }
