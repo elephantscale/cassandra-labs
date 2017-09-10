@@ -2,6 +2,9 @@ package com.es.cassandra;
 
 import java.text.NumberFormat;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSetFuture;
 import com.datastax.driver.core.Row;
@@ -10,12 +13,14 @@ import com.datastax.driver.core.Session;
 // Javadocs : http://www.datastax.com/drivers/java/2.0/index.html
 
 public class AsyncQuery {
+  
+  private static final Logger logger = LoggerFactory.getLogger(AsyncQuery.class);
 
   public static void main(String[] args) throws Exception {
     NumberFormat nf = NumberFormat.getInstance();
 
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
-    System.out.println("connected to " + cluster.getClusterName());
+    logger.info("connected to " + cluster.getClusterName());
 
     // TODO-1 : connect to keyspace
     Session session = cluster.connect("???");
@@ -31,13 +36,13 @@ public class AsyncQuery {
     for (Row row : results.getUninterruptibly()) // this is blocking call
     {
       counter++;
-      System.out.println("\n### " + counter);
-      System.out.println("### user_name : " + row.getString("user_name"));
+      logger.debug("\n### " + counter);
+      logger.debug("### user_name : " + row.getString("user_name"));
     }
     long t4 = System.currentTimeMillis();
 
-    System.out.println("### async query took : " + nf.format(t2 - t1) + "  ms");
-    System.out.println(String.format(
+    logger.info("### async query took : " + nf.format(t2 - t1) + "  ms");
+    logger.info(String.format(
         "### Iterated through %s users in %s milli secs. (%s reads / sec)",
         nf.format(counter),
         nf.format(t4 - t3),

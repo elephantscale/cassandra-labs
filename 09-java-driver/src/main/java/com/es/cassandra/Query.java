@@ -1,6 +1,10 @@
 package com.es.cassandra;
 
 import java.text.NumberFormat;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
@@ -22,12 +26,13 @@ import com.datastax.driver.core.Session;
  */
 
 public class Query {
+  private static final Logger logger = LoggerFactory.getLogger(Query.class);
 
   public static void main(String[] args) throws Exception {
     NumberFormat nf = NumberFormat.getInstance();
 
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
-    System.out.println("connected to " + cluster.getClusterName());
+    logger.info("connected to " + cluster.getClusterName());
 
     // TODO-1 : Connect to keyspace
     Session session = cluster.connect("???");
@@ -39,16 +44,17 @@ public class Query {
     for (Row row : resultSet) {
       numRows++;
       // TODO : extract attributes. row.getString(...);
-      System.out.println("### user_name : " + row.getString("user_name"));
-      System.out.println("### fname : " + row.getString("???"));
+      logger.info("### user_name : " + row.getString("user_name"));
+      logger.info("### fname : " + row.getString("???"));
 
-      // TODO bonus : print emails
+      // TODO bonus : get email Set
       // Hint : Refer to JavaDocs for 'Row' for the correct 'get...'
-      // method
+      // Set<String> emails = row.getSet("???", String.class);
+      // logger.info("### emails : " + emails);
     }
     long t2 = System.currentTimeMillis();
 
-    System.out.println(
+    logger.info(
         String.format("### Queried %s users in %s milli secs. (%s reads / sec)",
             nf.format(numRows),
             nf.format(t2 - t1),

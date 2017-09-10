@@ -3,19 +3,24 @@ package com.es.cassandra;
 import java.text.NumberFormat;
 import java.util.logging.SimpleFormatter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 
 // Javadocs : http://www.datastax.com/drivers/java/2.0/index.html
 
 public class Insert {
+  
+  private static final Logger logger = LoggerFactory.getLogger(Insert.class);
 
   public static void main(String[] args) throws Exception {
 
     NumberFormat nf = NumberFormat.getInstance();
 
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
-    System.out.println("### connected to " + cluster.getClusterName());
+    logger.info("### connected to " + cluster.getClusterName());
 
     // TODO-1 : connect to keyspace
     Session session = cluster.connect("???");
@@ -35,14 +40,14 @@ public class Insert {
           user_name, fname, lname, emails);
 
       // debug print, turn off for benchmarking :-)
-      System.out.println("### " + cql);
+      logger.debug("### " + cql);
 
       // TODO-2 : execute cql in session
       // session......(cql);
     }
     long t2 = System.currentTimeMillis();
 
-    System.out.println(
+    logger.info(
         "".format("### Inserted %s users in %s milli secs. (%s writes / sec)",
             nf.format(maxUsers), 
             nf.format(t2 - t1),
