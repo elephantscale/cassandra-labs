@@ -20,7 +20,7 @@ end_date = datetime.datetime(2014,6,1,0,0,0)
 ## --- script main
 if __name__ == '__main__':
     with open(file_name, "w") as fout:
-        print "generating file ", file_name
+        print("generating file ", file_name)
 
         fout.write("use %s;\n\n" % keyspace)
 
@@ -41,5 +41,5 @@ if __name__ == '__main__':
             ## TODO 3 :  for partitioning by month (bonus lab)
             #logline = "INSERT INTO %s(sensor_id, time, month, temperature, humidity, co_level) VALUES('%s', '%s', '%s', %s, %s, %s);" % (table, sensor_id, timestamp, month, temp, humidity, co_level)
 
-            #print logline
+            #print(logline)
             fout.write(logline + "\n")

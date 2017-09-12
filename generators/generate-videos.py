@@ -22,7 +22,7 @@ end_date = datetime.datetime(2014,1,1,0,0,0)
 ## --- script main
 if __name__ == '__main__':
     with open(file_name, "w") as fout:
-        print "generating file ", file_name
+        print("generating file ", file_name)
 
         fout.write("use %s;\n\n" % keyspace)
 

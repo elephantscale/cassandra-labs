@@ -15,7 +15,7 @@ import random
 ## --- script main
 if __name__ == '__main__':
     with open(file_name, "w") as fout:
-        print "generating file ", file_name
+        print("generating file ", file_name)
 
         fout.write("use %s;\n\n" % keyspace)
 
@@ -32,5 +32,5 @@ if __name__ == '__main__':
             all_emails = "{" + ','.join(emails) + "}"
 
             logline = "INSERT INTO %s(user_name, fname, lname, emails) VALUES('%s', '%s', '%s', %s);" % (table, username, fname, lname, all_emails)
-            #print logline
+            #print(logline)
             fout.write(logline + "\n")

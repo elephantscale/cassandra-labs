@@ -23,7 +23,7 @@ studios = ['HBO', 'Disney',  'FOX', 'ABC', 'Columbia', 'Netflix', 'FX', 'Lucas']
 ## --- script main
 if __name__ == '__main__':
     with open(file_name, "w") as fout:
-        print "generating file ", file_name
+        print("generating file ", file_name)
 
         fout.write("use %s;\n\n" % keyspace)
 
@@ -33,8 +33,8 @@ if __name__ == '__main__':
             studio = random.choice(studios)
             feature_type = random.choice(show_type)
             release_date = random_timestamp(start_date, end_date).date()
-            #print release_date
+            #print(release_date)
 
             logline = "INSERT INTO %s(code, name, release_date, studio, type) VALUES('%s', '%s', '%s', '%s', '%s');" % (table, code, name, release_date, studio, feature_type)
-            #print logline
+            #print(logline)
             fout.write(logline + "\n")
