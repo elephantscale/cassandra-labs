@@ -43,7 +43,7 @@ public class AsyncQuery {
 
     logger.info("### async query took : " + nf.format(t2 - t1) + "  ms");
     logger.info(String.format(
-        "### Iterated through {} users in {} milli secs. ({} reads / sec)",
+        "### Iterated through %s users in %s milli secs. (%s reads / sec)",
         nf.format(counter),
         nf.format(t4 - t3),
         nf.format(counter * 1000.0 / (t4 - t3))));

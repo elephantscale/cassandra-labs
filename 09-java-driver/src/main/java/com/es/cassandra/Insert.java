@@ -36,7 +36,7 @@ public class Insert {
       // construct CQL
       String cql = String.format(
           "INSERT INTO users(user_name, fname, lname, emails) "
-              + "VALUES ('{}', '{}', '{}',  {});",
+              + "VALUES ('%s', '%s', '%s',  '%s');",
           user_name, fname, lname, emails);
 
       // debug print, turn off for benchmarking :-)
@@ -48,7 +48,7 @@ public class Insert {
     long t2 = System.currentTimeMillis();
 
     logger.info(
-        "".format("### Inserted {} users in {} milli secs. ({} writes / sec)",
+        "".format("### Inserted %s users in %s milli secs. (%s writes / sec)",
             nf.format(maxUsers), 
             nf.format(t2 - t1),
             nf.format(maxUsers * 1000.0 / (t2 - t1))));
