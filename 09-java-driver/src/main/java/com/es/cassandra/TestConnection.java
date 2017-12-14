@@ -19,12 +19,12 @@ public class TestConnection {
     Cluster cluster = Cluster.builder().addContactPoint("localhost").build();
 
     Metadata metadata = cluster.getMetadata();
-    logger.info("### Connected to cluster: %s\n",
+    logger.info("### Connected to cluster: {}\n",
         metadata.getClusterName());
 
     logger.info("### Hosts:");
     for (Host host : metadata.getAllHosts()) {
-      logger.info("###    Host: %s, Rack: %s,  Datacenter: %s \n",
+      logger.info("###    Host: {}, Rack: {},  Datacenter: {} \n",
           host.getAddress(), host.getRack(), host.getDatacenter());
     }
 

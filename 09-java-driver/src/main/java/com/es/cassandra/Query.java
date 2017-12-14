@@ -55,7 +55,7 @@ public class Query {
     long t2 = System.currentTimeMillis();
 
     logger.info(
-        String.format("### Queried %s users in %s milli secs. (%s reads / sec)",
+        String.format("### Queried {} users in {} milli secs. ({} reads / sec)",
             nf.format(numRows),
             nf.format(t2 - t1),
             nf.format(numRows * 1000.0 / (t2 - t1))));
