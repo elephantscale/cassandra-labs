@@ -140,6 +140,16 @@ strong, b {
     background-color: #fefae4;
 }
 
+::selection {/* WebKit/Blink Browsers */
+  background: orange;
+  /* background: #ffb7b7; */
+}
+::-moz-selection { /* Gecko Browsers */
+  /* background: #ffb7b7; */
+  background: orange;
+}
+
+
 @media screen and (min-width: 768px) {
     body {
         width: 80%;
