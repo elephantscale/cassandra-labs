@@ -12,7 +12,7 @@ import com.datastax.driver.core.Session;
 // Javadocs : http://www.datastax.com/drivers/java/2.0/index.html
 
 public class Insert {
-  
+
   private static final Logger logger = LoggerFactory.getLogger(Insert.class);
 
   public static void main(String[] args) throws Exception {
@@ -36,7 +36,7 @@ public class Insert {
       // construct CQL
       String cql = String.format(
           "INSERT INTO users(user_name, fname, lname, emails) "
-              + "VALUES ('%s', '%s', '%s',  '%s');",
+              + "VALUES ('%s', '%s', '%s',  %s);",
           user_name, fname, lname, emails);
 
       // debug print, turn off for benchmarking :-)
@@ -49,7 +49,7 @@ public class Insert {
 
     logger.info(
         "".format("### Inserted %s users in %s milli secs. (%s writes / sec)",
-            nf.format(maxUsers), 
+            nf.format(maxUsers),
             nf.format(t2 - t1),
             nf.format(maxUsers * 1000.0 / (t2 - t1))));
 

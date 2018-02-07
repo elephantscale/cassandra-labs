@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='../assets/css/main.css'/>
 
-[<< back to main index](../README.md) 
+[<< back to main index](../README.md)
 
 Lab 03 : Collections
 ====================
@@ -8,7 +8,7 @@ Lab 03 : Collections
 ### Overview
 First look at Cqlsh
 
-### Depends On 
+### Depends On
 None
 
 ### Run time
@@ -28,7 +28,12 @@ None
 ## STEP 3: Users Table
 **Create users table with the following fields**  
 ```
-      uname ... primary key
+cqlsh>
+    use myflix;
+
+    CREATE TABLE users (
+      uname text primary key
+    );
 ```
 
 **Add a user named 'tim'**  
@@ -42,7 +47,7 @@ We need to store multiple emails for user.  What collection type can be used?
 
 **Modify the users table to add a new field 'emails'**
 ```
-    cqlsh> 
+    cqlsh>
         ALTER TABLE users  ADD emails ????;
 ```
 
@@ -121,7 +126,6 @@ What are the limitations of this data type?
 
 **=> Q : Are there size limitations for collections?**
 
-**=> Q: Can you index collections?  which types** 
+**=> Q: Can you index collections?  which types**
 
 **=> Q : what type of queries are supported for collections?**
-

@@ -44,14 +44,14 @@ Script to use :  `generators/generate-features.py`
 Inspect the python script in `../generators/generate-features.py`  
 Make any changes in config section
 ```
-    $   vi  ../generators/generate-features.py
+    $   vi  ~/cassandra-labs/generators/generate-features.py
         or
-    $   nano  ../generators/generate-features.py
+    $   nano  ~/cassandra-labs/generators/generate-features.py
 ```
 
 Run the script to generate data
 ```
-    $   python  ../generators/generate-features.py
+    $   python  ~/cassandra-labs/generators/generate-features.py
 ```
 
 This will generate  `features.data` file.  
@@ -112,7 +112,7 @@ Create a users table with the following attributes
     - primary_email : text
     - emails : Set of text
 
-Use  `../generators/generate-users.py`  script to generate users data.  
+Use  `~/cassandra-labs/generators/generate-users.py`  script to generate users data.  
 Import the data into users table.   
 Follow similar import procedure as step 2.
 
@@ -129,12 +129,12 @@ Also create `ratings_by_feature` table
 - and what is the primary key?
 
 
-use script `../generators/generate-ratings.py`  to generate some ratings data and import it into the table.
+use script `~/cassandra-labs/generators/generate-ratings.py`  to generate some ratings data and import it into the table.
 Follow similar procedure in step (2)
 
 
 ## Step 6: Populating  'ratings_by_feature' Table
-In step-5 the `../generators/generate-ratings.py` script only populated `ratings_by_user` table.  Modify the script to add data for `ratings_by_feature` table.
+In step-5 the `~/cassandra-labs/generators/generate-ratings.py` script only populated `ratings_by_user` table.  Modify the script to add data for `ratings_by_feature` table.
 
 Hint : look around line 31 in the python script
 
