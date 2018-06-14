@@ -2,7 +2,7 @@
 
 [<< back to main index](../README.md)  / [CQL](README.md)
 
-Lab 2.5 : Indexing
+Lab 2.7 : Indexing
 ==================
 
 ### Overview
@@ -36,7 +36,7 @@ If you had dropped `features` table restore it as follows.
     cqlsh>
         use myflix;
 
-        select * from features where type = 'TV Show’;
+        select * from features where type = 'TV Show';
 ```
 **=> what is the result?**
 
