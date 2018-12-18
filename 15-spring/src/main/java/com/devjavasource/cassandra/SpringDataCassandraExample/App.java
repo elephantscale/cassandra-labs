@@ -9,8 +9,7 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 import com.datastax.driver.core.querybuilder.Select;
-
-import com.devjavasource.cassandra.dto.Poet;
+import com.devjavasource.cassandra.dto.Feature;
 
 public class App {
 	private static Cluster cluster;
@@ -26,20 +25,20 @@ public class App {
 
 			CassandraOperations cassandraOps = new CassandraTemplate(session);
 
-			final String[] columns = new String[] { "id", "address", "name" };
+			final String[] columns = new String[] { "code", "name", "type", "release_date" };
 
-			Select select = QueryBuilder.select(columns).from("poets");
-			select.where(QueryBuilder.eq("id", 1));
+			Select select = QueryBuilder.select(columns).from("features");
+//			select.where(QueryBuilder.eq("code", 'madmen'));
 
-			final List<Poet> results = cassandraOps.select(select, Poet.class);
+			final List<Feature> results = cassandraOps.select(select, Feature.class);
 
 			System.out.println("Spring Data Cassandra Example");
 			System.out.println("==============================");
 
-			for (Poet poets : results) {
-				System.out.println("Poet Id is: " + poets.getId());
-				System.out.println("Poet Address is: " + poets.getAddress());
-				System.out.println("Poet Name is: " + poets.getName());
+			int counter = 0;
+			for (Feature feature : results) {
+				counter ++;
+				System.out.println(counter + " : " + feature);
 			}
 
 		} catch (Exception e) {

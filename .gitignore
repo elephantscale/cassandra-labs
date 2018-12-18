@@ -13,4 +13,4 @@ generated/
 *.pyc
 .idea/
 *.iml
-
+.settings
