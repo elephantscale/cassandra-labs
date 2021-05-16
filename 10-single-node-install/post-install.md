@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='../assets/css/main.css'/>
 
-[<< back to main index](../README.md) / [Install](README.md) 
+ / [Install](README.md) 
 
 Lab 10. Single Node Install / Post Install
 ====================

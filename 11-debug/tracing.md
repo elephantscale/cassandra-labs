@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='../assets/css/main.css'/>
 
-[<< back to main index](../README.md) / [Debugging](README.md)
+ / [Debugging](README.md)
 
 Lab 11.1: C* Tracing
 ====================
