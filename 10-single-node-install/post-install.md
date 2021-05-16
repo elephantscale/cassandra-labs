@@ -20,7 +20,7 @@ Start cqlsh and interact with C*.
 In tar install cqlsh can be found : /path/to/cassandra/install/bin/cqlsh
 
 ```sql
-    $    ~/cassandra/bin/cqlsh
+    $   ~/apps/cassandra/bin/cqlsh
 
     cqlsh>   
           describe cluster;
@@ -55,7 +55,7 @@ We will use `cassandra-stress` tool.
 In tar installs cassandra-stress will be in : `/path/to/cassandra/install/tools/bin/cassandra-stress`
 
 ```bash
-   $   ~/cassandra/tools/bin/cassandra-stress  help
+   $  ~/apps/cassandra/tools/bin/cassandra-stress  help
 ```
 
 Will print out help.
@@ -70,7 +70,7 @@ Run `atop` command on this terminal
 
 Now lets run a write test
 ```bash
-   $   ~/cassandra/tools/bin/cassandra-stress  write
+   $  ~/apps/cassandra/tools/bin/cassandra-stress  write
    (older versions 'cassandra-stress  -t 8 ')
 ```
 

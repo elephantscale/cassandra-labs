@@ -63,10 +63,10 @@ We will use 'getendpoints' options in nodetool.
 
 Usage:
 ```bash
-  $  ~/cassandra/bin/nodetool getendpoints   keyspace  table  primary_key
+  $ ~/apps/cassandra/bin/nodetool getendpoints   keyspace  table  primary_key
 ```
 
 Try:
 ```bash
-  $  ~/cassandra/bin/nodetool getendpoints   myflix  features  'sopr'
+  $ ~/apps/cassandra/bin/nodetool getendpoints   myflix  features  'sopr'
 ```

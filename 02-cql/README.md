@@ -39,5 +39,5 @@ Follow [delete.md](2.6-delete.md)
 ## Step 8 : Restore Data
 Dropped all data?  Use the following to get the data back..
 ```
-    $    ~/cassandra/bin/cqlsh   -f   ~/cassandra-labs/02-cql/features.cql
+    $   ~/apps/cassandra/bin/cqlsh   -f   ~/cassandra-labs/02-cql/features.cql
 ```

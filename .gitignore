@@ -14,3 +14,4 @@ generated/
 .idea/
 *.iml
 .settings
+*.out

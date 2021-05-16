@@ -22,7 +22,7 @@ None
 Note : If you already have this table defined, you may skip this step.
 Or drop the previous table and re-create it as follows.
 ```
-    $    ~/cassandra/bin/cqlsh
+    $   ~/apps/cassandra/bin/cqlsh
     cqlsh>
         use myflix;
 
@@ -63,12 +63,12 @@ This file contains CQL statements to populate features table
 
 Import the features.data
 ```
-    $    ~/cassandra/bin/cqlsh   -f features.data
+    $   ~/apps/cassandra/bin/cqlsh   -f features.data
 ```
 
 Verify the data from cqlsh
 ```
-    $   ~/cassandra/bin/cqlsh
+    $  ~/apps/cassandra/bin/cqlsh
     cqlsh>
         use myflix;
         select * from  features limit 10;
