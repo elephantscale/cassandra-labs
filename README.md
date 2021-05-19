@@ -20,6 +20,7 @@
 
 * [4.1 Composite Keys 1](04-composite-keys/4.1-composite-keys-1.md)
 * [4.2 Composite Keys 2](04-composite-keys/4.2-composite-keys-2.md)
+* [4.3 - Materializd views](04-composite-keys/4.3-materialized-view-1.md)
 
 **5. Time Series**
 
