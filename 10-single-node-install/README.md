@@ -15,7 +15,7 @@ None
 1 hour
 
 ### Instructor:
-- Use linux-clean-* AMI
+- Use ubuntu-desktop* AMI
 - m3.medium instance type
 
 ## STEP 1: Login
