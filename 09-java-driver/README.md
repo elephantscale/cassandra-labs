@@ -2,7 +2,7 @@
 
  
 
-Lab 09 : Java Drivers
+Lab 09: Java Drivers
 ====================
 
 ### Overview
