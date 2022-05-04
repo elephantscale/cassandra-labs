@@ -15,10 +15,10 @@ None
 1 hour
 
 
-### Java driver docs :
+### Java driver docs:
 https://docs.datastax.com/en/latest-java-driver/java-driver/whatsNew2.html
 
-### Java API docs :
+### Java API docs:
 http://docs.datastax.com/en/drivers/java/3.0/
 
 ### Editing files
