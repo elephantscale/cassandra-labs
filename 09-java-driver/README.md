@@ -18,9 +18,6 @@ None
 ### Java driver docs:
 https://docs.datastax.com/en/developer/java-driver/4.13/
 
-### Java API docs:
-http://docs.datastax.com/en/drivers/java/3.0/
-
 ### Editing files
 Read [how to edit files](../edit-files.md)
 
