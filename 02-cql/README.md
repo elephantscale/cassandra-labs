@@ -18,7 +18,7 @@ None
 
 ## STEP 0: CQL Reference
 
-[CQL Reference Docs](https://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlReferenceTOC.html)
+[CQL Reference Docs](https://cassandra.apache.org/doc/latest/cassandra/cql/index.html)
 
 ## STEP 1: Create A Table
 
@@ -41,12 +41,12 @@ Follow [alter.md](2.4-alter.md)
 Follow [update.md](2.5-update.md)
 
 ## STEP 6: Delete
-j
+
 Follow [delete.md](2.6-delete.md)
 
-## Step 7: Restore ALL Data
+## Step 7: Restore allData
 
-Dropped all data?  Use the following to get the data back..
+Dropped all data?  Use the following to get the data back.
 ```
     $   ~/apps/cassandra/bin/cqlsh   -f   ~/cassandra-labs/02-cql/features.cql
 ```
