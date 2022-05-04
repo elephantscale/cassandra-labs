@@ -1,7 +1,7 @@
 <link rel='stylesheet' href='../assets/css/main.css'/>
 
 
-# Lab 02 : CQL Introduction
+# Lab 02: CQL Introduction
 
 ## Overview
 
