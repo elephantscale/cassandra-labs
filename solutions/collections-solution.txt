@@ -1,0 +1,82 @@
+// Collections Solutions
+// =====================
+
+// -----
+// step 2)
+// ------
+
+CREATE TABLE users (
+     uname text,
+
+     PRIMARY KEY (uname)
+     );
+
+insert into users(uname) values('tim');
+
+// -----
+// step 3)
+// ------
+
+// add emails column as set
+
+alter table users add emails set<text>;
+
+// set new emails
+
+insert into users(uname, emails) values ('tim', {'tim@gmail.com', 'tim@me.com'});
+
+// or
+
+update users set emails = {'tim@gmail.com', 'tim@me.com'} where uname = 'tim';
+
+// add another email
+
+update users set emails = emails + {'tim@office.com'} where uname = 'tim';
+
+
+// -----
+// step 4)
+// -----
+// add chat map
+
+alter table users add chats map<text, text>;
+
+update users set chats = {'skype' : 'tim_skype', 'ichat' : 'tim_mac'} where uname = 'tim';
+
+update users set chats = chats +  {'hangout' : 'tim_google'} where uname = 'tim';
+
+
+// -----
+// step 5)
+// -----
+
+// 5a) storing locations as list
+
+alter table users add locations list<text>;
+
+// note escaping single quote ''
+
+update users set locations = ['Neal''s coffee @ 2014-10-01 17:00'] + locations where uname = 'tim';
+
+// add latest first
+
+update users set locations = ['Echo Park @ 2014-10-01-16:00'] + locations where uname = 'tim';
+
+// 5b) storing locations as a map
+
+alter table users add locations2 map<timestamp, text>;
+
+update users set locations2 = locations2 + {'2014-10-01 17:00' : 'Neal''s coffee'} where uname = 'tim';
+
+update users set locations2 = locations2 + {'2014-10-01 18:00' : 'Echo park'} where uname = 'tim';
+
+update users set locations2 = locations2 + {'2014-10-01 15:00' : 'Z Pizza'} where uname = 'tim';  // earlier checkin
+
+// note the sorting order for map / list
+// map is sorted by 'natural' sorting order of key
+
+
+// -----
+// step 6)
+// -----
+// collections are limited to 64k in size

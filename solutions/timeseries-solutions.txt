@@ -1,0 +1,24 @@
+// sensor table
+CREATE TABLE sensors (
+         sensor_id text,
+         time  timestamp,
+         temperature  float,
+         humidity  float,
+         co_level float,
+
+        PRIMARY KEY (sensor_id,  time)
+        )
+WITH CLUSTERING ORDER BY (time DESC);
+
+// sensor table
+CREATE TABLE sensors2 (
+         sensor_id text,
+         time  timestamp,
+         temperature  float,
+         humidity  float,
+         co_level float,
+         month text,
+
+        PRIMARY KEY ((sensor_id, month),  time)
+        )
+WITH CLUSTERING ORDER BY (time DESC);

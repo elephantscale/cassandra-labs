@@ -1,0 +1,111 @@
+Solutions for Cassandra Data Modeling Labs  :  MyFlix
+------------------------------------------
+
+Create keyspace 'myflix'
+Note : we only do this once.
+
+cqlsh>
+      CREATE KEYSPACE myflix
+          WITH REPLICATION = {
+              'class' : 'SimpleStrategy',
+              'replication_factor' : 1
+          };
+
+cqlsh>
+      use myflix;
+
+--------
+users table:
+--------
+
+  CREATE TABLE users (
+     user_name text,
+     fname text,
+     lname text,
+     emails Set<text>,
+     primary_email text,
+     password text,
+     PRIMARY KEY (user_name)
+  );
+
+Generating data:
+Inspect generate-users.py and check 'config' section.
+Make any changes necessary.
+  $  cd generators
+  $  python generate-users.py
+  $  cqlsh -f users.data
+
+
+--- Notes
+Pre-pend email to list
+    UPDATE users SET emails = ['me@johnsmith.com'] + emails WHERE user_name = 'user1';
+
+Post-pend email
+       UPDATE users SET emails = emails + ['me2@johnsmith.com']  WHERE user_name = 'user1'
+
+Add emails to Set  (no order is preserved)
+      UPDATE users SET emails = emails + {'me@johnsmith.com'}  WHERE user_name = 'user1';
+
+--------
+Table : features
+--------
+
+  create table features (
+      code text,
+      name text,
+      release_date timestamp,  // a date : 2000-01-02
+      type text,  // TV-Show, Movie, Live
+      studio text,
+      PRIMARY KEY (code)
+      );
+
+  CREATE INDEX idx_studio on features(studio);
+  CREATE INDEX idx_type on features(type);
+
+Generating data
+  $  cd generators
+  $  python generate-features.py
+  $  cqlsh -f features.data
+
+Table : Ratings By User
+--------
+
+create table ratings_by_user (
+    user_name text,
+    feature_code text,
+    rating int,
+    PRIMARY KEY (user_name, feature_code)
+    );
+
+--------
+Table : Ratings By Feature
+--------
+
+create table ratings_by_feature (
+    user_name text,
+    feature_code text,
+    rating int,
+    PRIMARY KEY (feature_code, rating, user_name)
+    )
+    WITH CLUSTERING ORDER BY (rating DESC);
+
+
+Generating ratings data
+  $   cd generators
+  edit generate-ratings.py  to insert data into two tables (line # 31)
+  $   python  generate-ratings.py
+  $   cqlsh  -f ratings.data
+
+--------
+Queries:
+--------
+Find all ratings by a feature
+    select  * from ratings_by_feature where feature_code = 'feature-1';
+
+what is the best rating for a movie?
+    select * from ratings_by_feature where feature_code = 'feature-1' ORDER BY rating DESC LIMIT 1;
+
+what is the worst rating for a movie?
+    select * from ratings_by_feature where feature_code = 'feature-1' ORDER BY rating  LIMIT 1;
+
+

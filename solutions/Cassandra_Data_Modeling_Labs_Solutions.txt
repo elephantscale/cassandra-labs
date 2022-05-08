@@ -1,0 +1,114 @@
+Solutions for Cassandra Data Modeling Labs
+------------------------------------------
+
+Create keyspace 'myflix'
+Note : we only do this once.
+
+cqlsh>
+      CREATE KEYSPACE myflix
+          WITH REPLICATION = {
+              'class' : 'SimpleStrategy',
+              'replication_factor' : 1
+          };
+
+cqlsh>
+      use myflix;
+
+--------------------
+MyFlix : see Myflix_Solutions.txt
+--------------------
+
+--- 'You Tube' : Videos ---
+
+CREATE TABLE videos (
+   video_id uuid,
+   video_name text,
+   user_name text,
+   description text,
+   location map<text,text>,
+   tags set<text>,
+   upload_date timestamp,
+   PRIMARY KEY (video_id)
+);
+
+cqlsh>
+  INSERT INTO videos (video_id, video_name, user_name, description, location, tags, upload_date)
+  VALUES (18134b9d-6222-4f0e-b06d-4ba1e6c62f50, 'my cat', 'johnsmith', 'this is my cat', {'us' : 'http://right.here'}, {'cats', 'pets'}, '2014-04-01 20:33:15');
+
+Generate some video data
+    $   cd generators
+    $   python   generate-videos.py
+    $   cqlsh  -f  videos.data
+
+verify data from within cqlsh
+    cqlsh>  select * from videos; quit;
+
+--------------
+'You Tube' : user-video relation
+
+CREATE TABLE username_video_index (
+   user_name text,
+   video_id uuid,
+   upload_date timestamp,
+   video_name text,
+   PRIMARY KEY (user_name, upload_date, video_id)
+);
+
+
+--------------
+'Shopping Cart' : cart
+
+Create table shopping_carts (
+    user_id  text,
+    item_id  text,
+    qty int,
+    PRIMARY KEY ( user_id, item_id)
+);
+
+
+Add items to cart
+    INSERT into shopping_carts  (user_id, item_id, qty)
+    VALUES ( 'user1',   'item1',  2);
+
+    INSERT into shopping_carts  (user_id, item_id, qty)
+    VALUES ( 'user1',   'item2',  1);
+
+    INSERT into shopping_carts  (user_id, item_id, qty)
+    VALUES ( 'user2',   'item3',  1);
+
+Get items in cart for user
+    Select * from shopping_cart where user_id = 'user1';
+
+Update qty of item
+
+    UPDATE shopping_carts
+    SET qty = 0
+    WHERE user_id = 'user1'  AND item_id  = 'item1';
+
+
+----------------
+'User Activity Logging'
+---
+
+Create table user_activities (
+     user_id  text,
+     time  timestamp,
+     activity text,
+     details text,
+    PRIMARY KEY (user_id,  time),
+    )
+    WITH CLUSTERING ORDER BY (time DESC);
+
+insert some sample data:
+
+  insert into user_activities(user_id, activity,  details, time) values ('user1', 'post',  'post1',   '2014-01-01 10:00:00');
+
+  insert into user_activities(user_id, activity, details, time) values ('user1', 'click', 'image1',  '2014-01-01 10:03:00');
+
+  insert into user_activities(user_id, activity, details, time) values ('user2', 'like', 'image1',  '2014-01-01 10:10:00');
+
+
+verify data
+  select * from user_activities;
+
+Note the sorting order per user

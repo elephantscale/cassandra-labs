@@ -1,0 +1,29 @@
+
+---
+lab :  cql
+create :
+   CREATE KEYSPACE myflix
+        WITH REPLICATION = {
+            'class' : 'SimpleStrategy',
+            'replication_factor' : 1
+            };
+
+  use myflix;
+
+  CREATE TABLE features (
+            code text,
+            name text,
+            type text,
+            release_date timestamp,
+            PRIMARY KEY(code)
+        );
+
+finding writetime
+    select code, writetime(name)  from features;
+
+----
+
+lab 04) Getting latest from sensor
+    select * from sensors  where sensor_id = 'sensor1' LIMIT 1;
+
+--

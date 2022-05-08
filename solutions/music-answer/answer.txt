@@ -1,0 +1,35 @@
+Designing a Music Service on Cassandra
+------
+create keyspace:  music
+    cqlsh>
+     CREATE KEYSPACE music
+          WITH REPLICATION = {
+              'class' : 'SimpleStrategy',
+              'replication_factor' : 1
+          };
+
+songs:
+    CREATE TABLE songs (
+     id uuid,
+     name text,
+     duration int,
+     PRIMARY KEY (id)
+   );
+
+playlists:
+    CREATE TABLE playlists (
+     id uuid,
+     name text,
+     userid text,
+     songs list<uuid>,
+     PRIMARY KEY (id)
+   );
+
+users:
+    CREATE TABLE users (
+     id text,
+     name text,
+     playlists set<uuid>,
+     PRIMARY KEY (id)
+   );
+
