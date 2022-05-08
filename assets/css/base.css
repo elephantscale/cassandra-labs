@@ -108,9 +108,10 @@ code, pre {
 }
 code {border: 1px solid #ddd;}
 code, pre code {
-    background-color: #f9fdfd;
+    background-color: #e1edf7;
     color: #434343;
     font-size: inherit;
+    border: 1px none;
 }
 pre {
     margin: 0 0 18px;
@@ -118,11 +119,32 @@ pre {
     line-height: inherit;
     font-size: 16px;
     border-radius: 3px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 pre code {
     padding: 16px;
     display: block;
     border: 0 none;
+    overflow-x: auto;
+}
+
+.console code{
+    background-color: #f7f7d6;
+}
+
+.sourceCode code{
+    /* change for sourceCode block bckgrnd */
+}
+
+pre console code {
+    padding: 16px;
+    display: block;
+    border: 1 none;
+    background-color: #f1f0d8;
 }
 ol, ul {
     padding-left: 40px;
@@ -139,16 +161,6 @@ strong, b {
     background-color: rgba(255, 251, 209, 0.85);
     background-color: #fefae4;
 }
-
-::selection {/* WebKit/Blink Browsers */
-  background: orange;
-  /* background: #ffb7b7; */
-}
-::-moz-selection { /* Gecko Browsers */
-  /* background: #ffb7b7; */
-  background: orange;
-}
-
 
 @media screen and (min-width: 768px) {
     body {
