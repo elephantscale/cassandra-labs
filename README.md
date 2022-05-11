@@ -12,7 +12,7 @@
 **2. CQL Intro**
 
 * [CQL](02-cql/README.md)
-* [Indexing](02-cql/2.7-index.md)
+* [Indexing](02-indexing/2.7-index.md)
 
 **3. [Collections](03-collections/README.md)**
 

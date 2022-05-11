@@ -1,5 +1,6 @@
 01-intro
 02-cql
+02-indexing
 03-collections
 04-composite-keys
 05-time-series
@@ -17,4 +18,5 @@
 assets
 edit-files.md
 generators
+solutions
 README.md
