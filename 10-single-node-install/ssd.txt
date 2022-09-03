@@ -3,7 +3,7 @@ Benchmarking C* on SSD
 Our EC2 instances are using /var/lib/cassandra for storage
 This directory is on a EBS device -- a network drive
     --> Not very high IO
-Ephemeral disks are ‘local’, and provide higher IO
+Ephemeral disks are 'local', and provide higher IO
 Your instance might have a SSD (flash drive) as local drive (verify with instructor)
 
 Use 'df -kh'  command to see what disks are available.

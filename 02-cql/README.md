@@ -44,7 +44,7 @@ Follow [update.md](2.5-update.md)
 
 Follow [delete.md](2.6-delete.md)
 
-## Step 7: Restore allData
+## Step 7: Restore all data
 
 Dropped all data?  Use the following to get the data back.
 ```

@@ -18,8 +18,14 @@ create :
             PRIMARY KEY(code)
         );
 
+allow filtering
+         select * from features where type = 'TV Show' ALLOW FILTERING;
+
 finding writetime
     select code, writetime(name)  from features;
+
+Adding a new column
+    ALTER TABLE features  ADD studio text;
 
 ----
 
