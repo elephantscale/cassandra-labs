@@ -40,7 +40,8 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>org.example.TestConnection</mainClass>
+                                    <!-- YOU NEED TO UPDATE THE CLASS NAME HERE -->
+                                    <mainClass>com.es.???</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
